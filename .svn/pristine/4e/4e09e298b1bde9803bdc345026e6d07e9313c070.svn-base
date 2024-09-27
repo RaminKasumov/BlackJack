@@ -1,0 +1,111 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BlackJack2022_3AHITN.Lib
+{
+    /// <summary>
+    /// Es gibt einige Eigenschaften und Methoden für die Teilnehmer, die von der Klasse AbstractPlayer implementiert werden
+    /// </summary>
+    public interface IPlayer
+    {
+        #region properties
+        /// <summary>
+        /// Erste gezogene Karte vom Kartendeck
+        /// </summary>
+        Card FirstCard { get; }
+
+        /// <summary>
+        /// Anzahl der Ass-Karten des Spielers
+        /// </summary>
+        int NumberOfAceCards { get; }
+
+        /// <summary>
+        /// Karten in der Hand des Teilnehmers
+        /// </summary>
+        /// <returns>Liefert alle Karten des Teilnehmers zurück</returns>
+        IEnumerable<Card> Cards { get; }
+
+        /// <summary>
+        /// Karten in der zweiten Hand des Teilnehmers
+        /// </summary>
+        /// <returns>Liefert alle Karten des Teilnehmers zurück</returns>
+        IEnumerable<Card> SecondHandCard { get; }
+
+        /// <summary>
+        /// Es wird überprüft, ob das Spiel überhaupt zu Ende ist oder nicht
+        /// </summary>
+        bool HasFinished { get; }
+
+        /// <summary>
+        /// Liefert private Instanzvariable _cardSource zurück
+        /// </summary>
+        ICardSource CardSource { set; get; }
+        #endregion
+
+        #region methods
+        /// <summary>
+        /// Instanzvariable für die Strategie des Spielers wird initialisiert
+        /// </summary>
+        void SetPlayerStrategy(IPlayerStrategy strategy);
+
+        /// <summary>
+        /// Mithilfe des eingegebenen Aktions wird entweder in die Hand des Spielers eine Karte hinzugefügt oder ist er schon fertig
+        /// </summary>
+        /// <param name="action">Die vom Spieler ausgewählte Aktion</param>
+        /// <returns>Liefert die passende Aktion zurück</returns>
+        PlayerAction PlayAction(PlayerAction action, bool secondHand);
+
+        /// <summary>
+        /// Irgendeine Aktion für den Dealer
+        /// </summary>
+        /// <returns>Liefert die Aktion zurück</returns>
+        PlayerAction PlayAction(Card firstDealerCard);
+
+        /// <summary>
+        /// Name des Teilnehmers
+        /// </summary>
+        /// <returns>Liefert den Namen des Teilnehmers zurück</returns>
+        string GetName();
+
+        /// <summary>
+        /// Wert der Karten
+        /// </summary>
+        /// <returns>Liefert den Wert der Karten in der Hand des Teilnehmers zurück</returns>
+        int GetHandValue();
+
+        /// <summary>
+        /// Status der Karten
+        /// </summary>
+        /// <returns>Gibt den Status der Karten in der Hand des Teilnehmers aus</returns>
+        HandStatus GetHandStatus();
+
+        /// <summary>
+        /// Wert der Karten
+        /// </summary>
+        /// <returns>Liefert den Wert der Karten in der zweiten Hand des Teilnehmers zurück</returns>
+        int GetSecondHandValue();
+
+        /// <summary>
+        /// Status der Karten
+        /// </summary>
+        /// <returns>Gibt den Status der Karten in der zweiten Hand des Teilnehmers aus</returns>
+        HandStatus GetSecondHandStatus();
+
+        /// <summary>
+        /// Informationen über den Namen und Status des Teilnehmers
+        /// </summary>
+        /// <returns>Liefert die Informationen über den Namen und Status des Teilnehmers zurück</returns>
+        string ToString();
+
+        /// <summary>
+        /// Informationen über den Namen und die erste Karte des Teilnehmers
+        /// </summary>
+        /// <param name="firstCardOnly">Nur die erste Karte</param>
+        /// <returns>Gibt die Informationen über den Namen und die erste Karte des Teilnehmers aus</returns>
+        string ToString(bool firstCardOnly);
+        #endregion
+    }
+}

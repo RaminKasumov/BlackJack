@@ -1,0 +1,331 @@
+﻿using System;
+using System.Runtime.Serialization;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BlackJack2022_3AHITN.Lib
+{
+    /// <summary>
+    /// Alle nötigen Eigenschaften und Methoden für die Teilnehmer des Spiels BlackJack werden implementiert
+    /// </summary>
+    [Serializable]
+    [DataContract]
+    public abstract class AbstractPlayer : IPlayer
+    {
+        #region instancevariables
+        /// <summary>
+        /// Name des Teilnehmers
+        /// </summary>
+        [DataMember(Name = "Name")]
+        string _name;
+
+        /// <summary>
+        /// Hand des Teilnehmers
+        /// </summary>
+        protected Hand _hand;
+
+        /// <summary>
+        /// Zweite Hand des Spielers
+        /// </summary>
+        protected Hand _secondHand;
+
+        /// <summary>
+        /// Deck der Karten
+        /// </summary>
+        ICardSource _cardSource;
+
+        /// <summary>
+        /// Strategie des Spielers
+        /// </summary>
+        protected IPlayerStrategy _strategy;
+        #endregion
+
+        #region properties
+        /// <summary>
+        /// Die erste gezogene Karte des Teilnehmers wird ausgegeben
+        /// </summary>
+        public Card FirstCard
+        {
+            get
+            {
+                List<Card> cards = _hand.GetCards().ToList();
+                return cards[0];
+            }
+        }
+
+        /// <summary>
+        /// Anzahl der Ass-Karten des Spielers wird zurückgeliefert
+        /// </summary>
+        public int NumberOfAceCards
+        {
+            get
+            {
+                return _hand.GetNumberOfCards(CardValue.Ace);
+            }
+        }
+
+        /// <summary>
+        /// Karten in der Hand des Teilnehmers
+        /// </summary>
+        /// <returns>Liefert alle Karten des Teilnehmers zurück</returns>
+        public IEnumerable<Card> Cards
+        {
+            get
+            {
+                return _hand.GetCards();
+            }
+        }
+
+        /// <summary>
+        /// Karten in der zweiten Hand des Teilnehmers
+        /// </summary>
+        /// <returns>Liefert alle Karten des Teilnehmers zurück</returns>
+        public IEnumerable<Card> SecondHandCard
+        {
+            get
+            {
+                return _secondHand.GetCards();
+            }
+        }
+
+        /// <summary>
+        /// Es wird überprüft, ob der Teilnehmer auf die Aktion Stand gedrückt hat oder nicht
+        /// </summary>
+        bool IsStanding { set; get; }
+
+        /// <summary>
+        /// Es wird überprüft, ob das Spiel schon zu Ende ist oder nicht
+        /// </summary>
+        public bool HasFinished
+        {
+            get
+            {
+                if (IsStanding || GetHandStatus() == HandStatus.Bust)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Liefert private Instanzvariable _cardSource zurück
+        /// </summary>
+        public ICardSource CardSource
+        {
+            set
+            {
+                _cardSource = value;
+            }
+            get
+            {
+                return _cardSource;
+            }
+        }
+        #endregion
+
+        #region constructor
+        /// <summary>
+        /// Der Name und die erste gezogene Karte des Teilnehmers werden befüllt
+        /// </summary>
+        /// <param name="name">Name des Teilnehmers</param>
+        /// <param name="cardSource">Deck der Karten</param>
+        internal AbstractPlayer(string name, ICardSource cardSource, IPlayerStrategy strategy)
+        {
+            _name = name;
+            _cardSource = cardSource;
+            _strategy = strategy;
+            _hand = new Hand();
+            _secondHand = new Hand();
+        }
+        #endregion
+
+        #region methods
+        /// <summary>
+        /// Instanzvariable für die Strategie des Spielers wird initialisiert
+        /// </summary>
+        public void SetPlayerStrategy(IPlayerStrategy strategy)
+        {
+            _strategy = strategy;
+        }
+
+        /// <summary>
+        /// Mithilfe des eingegebenen Aktions wird entweder in die Hand des Spielers eine Karte hinzugefügt oder ist er fertig
+        /// </summary>
+        /// <param name="action">Die vom Spieler ausgewählte Aktion</param>
+        /// <returns></returns>
+        public PlayerAction PlayAction(PlayerAction action, bool secondHand)
+        {
+            if (action == PlayerAction.Double)
+            {
+                if (secondHand == true)
+                {
+                    _secondHand.AddCard(_cardSource.DrawCard());
+                }
+                else
+                {
+                    _hand.AddCard(_cardSource.DrawCard());
+                }
+                return PlayerAction.Double;
+            }
+            else if (action == PlayerAction.Split && !HasFinished)
+            {
+                _secondHand.AddCard(_hand.GetCards().ToList()[1]);
+                _hand.RemoveCard(1);
+                return PlayerAction.Split;
+            }
+            else if (action == PlayerAction.Hit)
+            {
+                if (secondHand == true)
+                {
+                    _secondHand.AddCard(_cardSource.DrawCard());
+                }
+                else
+                {
+                    _hand.AddCard(_cardSource.DrawCard());
+                }
+                return PlayerAction.Hit;
+            }
+            else if (action == PlayerAction.Stand)
+            {
+                IsStanding = true;
+                return PlayerAction.Stand;
+            }
+            else
+            {
+                IsStanding = false;
+                _hand.RemoveCards();
+                _secondHand.RemoveCards();
+                return PlayerAction.ThrowHand;
+            }
+        }
+
+        /// <summary>
+        /// Nächste Aktion wird von der zugeordneten Strategie bestimmt
+        /// </summary>
+        /// <returns>Liefert die Aktion zurück</returns>
+        public virtual PlayerAction PlayAction(Card firstDealerCard)
+        {
+            if (_strategy is PlayerStrategySoftHands)
+            {
+                if (firstDealerCard.Value == CardValue.Nine || firstDealerCard.Value == CardValue.Ten || firstDealerCard.Value == CardValue.King || firstDealerCard.Value == CardValue.Jack || firstDealerCard.Value == CardValue.Queen || firstDealerCard.Value == CardValue.Ace)
+                {
+                    PlayerAction action = PlayAction(((PlayerStrategySoftHands)_strategy).GetNextActionDealerCardValueIsHigherThanEight(_hand), false);
+                    return action;
+                }
+                else
+                {
+                    PlayerAction action = PlayAction(_strategy.GetNextAction(_hand), false);
+                    return action;
+                }
+            }
+            else
+            {
+                if (firstDealerCard.Value == CardValue.Six || firstDealerCard.Value == CardValue.Five || firstDealerCard.Value == CardValue.Four)
+                {
+                    PlayerAction action = PlayAction(_strategy.GetNextAction(_hand), false);
+                    return action;
+                }
+                else if (firstDealerCard.Value == CardValue.Three || firstDealerCard.Value == CardValue.Two)
+                {
+                    PlayerAction action = PlayAction(((PlayerStrategyHardHands)_strategy).GetNextActionDealerCardValueIsThreeOrTwo(_hand), false);
+                    return action;
+                }
+                else
+                {
+                    PlayerAction action = PlayAction(((PlayerStrategyHardHands)_strategy).GetNextActionDealerCardValueIsHigherThanSix(_hand), false);
+                    return action;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Name des Teilnehmers
+        /// </summary>
+        /// <returns>Liefert den Namen des Teilnehmers zurück</returns>
+        public string GetName()
+        {
+            return _name;
+        }
+
+        /// <summary>
+        /// Wert der Karten in der Hand des Teilnehmers
+        /// </summary>
+        /// <returns>Gibt den Wert der Karten in der Hand des Teilnehmers zurück</returns>
+        public int GetHandValue()
+        {
+            int handValue = _hand.Sum;
+            return handValue;
+        }
+
+        /// <summary>
+        /// Status der Karten in der Hand des Teilnehmers
+        /// </summary>
+        /// <returns>Gibt den Status der Karten in der Hand des Teilnehmers zurück</returns>
+        public HandStatus GetHandStatus()
+        {
+            HandStatus handStatus = _hand.GetStatus();
+            return handStatus;
+        }
+
+        /// <summary>
+        /// Wert der Karten in der zweiten Hand des Teilnehmers
+        /// </summary>
+        /// <returns>Gibt den Wert der Karten in der zweiten Hand des Teilnehmers zurück</returns>
+        public int GetSecondHandValue()
+        {
+            int secondHandValue = _secondHand.Sum;
+            return secondHandValue;
+        }
+
+        /// <summary>
+        /// Status der Karten in der zweiten Hand des Teilnehmers
+        /// </summary>
+        /// <returns>Gibt den Status der Karten in der zweiten Hand des Teilnehmers zurück</returns>
+        public HandStatus GetSecondHandStatus()
+        {
+            HandStatus secondHandStatus = _secondHand.GetStatus();
+            return secondHandStatus;
+        }
+
+        /// <summary>
+        /// Informationen über den Namen und Status des Teilnehmers
+        /// </summary>
+        /// <returns>Liefert die Informationen über den Namen und Status des Teilnehmers zurück</returns>
+        public override string ToString()
+        {
+            StringBuilder playerStatus = new StringBuilder();
+
+            playerStatus.Append(_hand);
+            if (IsStanding)
+            {
+                playerStatus.Append(" (Stand)");
+            }
+
+            return $"{_name} : {playerStatus}";
+        }
+
+        /// <summary>
+        /// Informationen über den Namen und die erste Karte des Teilnehmers
+        /// </summary>
+        /// <param name="firstCardOnly">Nur die erste Karte</param>
+        /// <returns>Liefert die Informationen über den Namen und die erste Karte des Teilnehmers zurück</returns>
+        public string ToString(bool firstCardOnly)
+        {
+            if (firstCardOnly)
+            {
+                return $"{_name} : {FirstCard}";
+            }
+            else
+            {
+                return ToString();
+            }
+        }
+        #endregion
+    }
+}

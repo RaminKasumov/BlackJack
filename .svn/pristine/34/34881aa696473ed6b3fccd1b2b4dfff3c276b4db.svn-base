@@ -1,0 +1,236 @@
+﻿
+namespace BlackJack2022_3AHITN.GUI
+{
+    partial class TableForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.lblNameOfDealer = new System.Windows.Forms.Label();
+            this.lblNameOfTable = new System.Windows.Forms.Label();
+            this.flpDrawCard = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnDrawCard = new System.Windows.Forms.Button();
+            this.lblDrawCard = new System.Windows.Forms.Label();
+            this.lblDealerName = new System.Windows.Forms.Label();
+            this.lblBet = new System.Windows.Forms.Label();
+            this.lblTableName = new System.Windows.Forms.Label();
+            this.lblTable = new System.Windows.Forms.Label();
+            this.lblBetinEuro = new System.Windows.Forms.Label();
+            this.pnlMain.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.BackgroundImage = global::BlackJack2022_3AHITN.GUI.Properties.Resources.Tisch;
+            this.pnlMain.Controls.Add(this.lblBetinEuro);
+            this.pnlMain.Controls.Add(this.lblNameOfDealer);
+            this.pnlMain.Controls.Add(this.lblNameOfTable);
+            this.pnlMain.Controls.Add(this.flpDrawCard);
+            this.pnlMain.Controls.Add(this.btnBack);
+            this.pnlMain.Controls.Add(this.btnDrawCard);
+            this.pnlMain.Controls.Add(this.lblDrawCard);
+            this.pnlMain.Controls.Add(this.lblDealerName);
+            this.pnlMain.Controls.Add(this.lblBet);
+            this.pnlMain.Controls.Add(this.lblTableName);
+            this.pnlMain.Controls.Add(this.lblTable);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1071, 558);
+            this.pnlMain.TabIndex = 0;
+            // 
+            // lblNameOfDealer
+            // 
+            this.lblNameOfDealer.AutoSize = true;
+            this.lblNameOfDealer.BackColor = System.Drawing.Color.Transparent;
+            this.lblNameOfDealer.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameOfDealer.ForeColor = System.Drawing.Color.Orange;
+            this.lblNameOfDealer.Location = new System.Drawing.Point(509, 262);
+            this.lblNameOfDealer.Name = "lblNameOfDealer";
+            this.lblNameOfDealer.Size = new System.Drawing.Size(108, 33);
+            this.lblNameOfDealer.TabIndex = 13;
+            this.lblNameOfDealer.Text = "Dealer";
+            // 
+            // lblNameOfTable
+            // 
+            this.lblNameOfTable.AutoSize = true;
+            this.lblNameOfTable.BackColor = System.Drawing.Color.Transparent;
+            this.lblNameOfTable.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameOfTable.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.lblNameOfTable.Location = new System.Drawing.Point(489, 140);
+            this.lblNameOfTable.Name = "lblNameOfTable";
+            this.lblNameOfTable.Size = new System.Drawing.Size(90, 33);
+            this.lblNameOfTable.TabIndex = 12;
+            this.lblNameOfTable.Text = "Tisch";
+            // 
+            // flpDrawCard
+            // 
+            this.flpDrawCard.BackColor = System.Drawing.Color.Transparent;
+            this.flpDrawCard.Location = new System.Drawing.Point(560, 317);
+            this.flpDrawCard.Name = "flpDrawCard";
+            this.flpDrawCard.Size = new System.Drawing.Size(132, 157);
+            this.flpDrawCard.TabIndex = 11;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.btnBack.FlatAppearance.BorderSize = 5;
+            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LimeGreen;
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnBack.Location = new System.Drawing.Point(741, 129);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(139, 48);
+            this.btnBack.TabIndex = 10;
+            this.btnBack.Text = "Zurück";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnDrawCard
+            // 
+            this.btnDrawCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnDrawCard.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.btnDrawCard.FlatAppearance.BorderSize = 5;
+            this.btnDrawCard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LimeGreen;
+            this.btnDrawCard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnDrawCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDrawCard.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDrawCard.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnDrawCard.Location = new System.Drawing.Point(343, 417);
+            this.btnDrawCard.Name = "btnDrawCard";
+            this.btnDrawCard.Size = new System.Drawing.Size(188, 48);
+            this.btnDrawCard.TabIndex = 9;
+            this.btnDrawCard.Text = "Karte ziehen";
+            this.btnDrawCard.UseVisualStyleBackColor = false;
+            this.btnDrawCard.Click += new System.EventHandler(this.btnDrawCard_Click);
+            // 
+            // lblDrawCard
+            // 
+            this.lblDrawCard.AutoSize = true;
+            this.lblDrawCard.BackColor = System.Drawing.Color.Transparent;
+            this.lblDrawCard.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDrawCard.ForeColor = System.Drawing.Color.GreenYellow;
+            this.lblDrawCard.Location = new System.Drawing.Point(204, 317);
+            this.lblDrawCard.Name = "lblDrawCard";
+            this.lblDrawCard.Size = new System.Drawing.Size(327, 33);
+            this.lblDrawCard.TabIndex = 6;
+            this.lblDrawCard.Text = "Ziehen Sie eine Karte:";
+            // 
+            // lblDealerName
+            // 
+            this.lblDealerName.AutoSize = true;
+            this.lblDealerName.BackColor = System.Drawing.Color.Transparent;
+            this.lblDealerName.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDealerName.ForeColor = System.Drawing.Color.GreenYellow;
+            this.lblDealerName.Location = new System.Drawing.Point(204, 262);
+            this.lblDealerName.Name = "lblDealerName";
+            this.lblDealerName.Size = new System.Drawing.Size(277, 33);
+            this.lblDealerName.TabIndex = 5;
+            this.lblDealerName.Text = "Name des Dealers:";
+            // 
+            // lblBet
+            // 
+            this.lblBet.AutoSize = true;
+            this.lblBet.BackColor = System.Drawing.Color.Transparent;
+            this.lblBet.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBet.ForeColor = System.Drawing.Color.GreenYellow;
+            this.lblBet.Location = new System.Drawing.Point(203, 199);
+            this.lblBet.Name = "lblBet";
+            this.lblBet.Size = new System.Drawing.Size(243, 33);
+            this.lblBet.TabIndex = 3;
+            this.lblBet.Text = "Einsatz in Euro:";
+            // 
+            // lblTableName
+            // 
+            this.lblTableName.AutoSize = true;
+            this.lblTableName.BackColor = System.Drawing.Color.Transparent;
+            this.lblTableName.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTableName.ForeColor = System.Drawing.Color.GreenYellow;
+            this.lblTableName.Location = new System.Drawing.Point(203, 140);
+            this.lblTableName.Name = "lblTableName";
+            this.lblTableName.Size = new System.Drawing.Size(259, 33);
+            this.lblTableName.TabIndex = 1;
+            this.lblTableName.Text = "Name des Tischs:";
+            // 
+            // lblTable
+            // 
+            this.lblTable.AutoSize = true;
+            this.lblTable.BackColor = System.Drawing.Color.Transparent;
+            this.lblTable.Font = new System.Drawing.Font("Century", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTable.ForeColor = System.Drawing.Color.Gold;
+            this.lblTable.Location = new System.Drawing.Point(485, 18);
+            this.lblTable.Name = "lblTable";
+            this.lblTable.Size = new System.Drawing.Size(149, 57);
+            this.lblTable.TabIndex = 0;
+            this.lblTable.Text = "Tisch";
+            // 
+            // lblBetinEuro
+            // 
+            this.lblBetinEuro.AutoSize = true;
+            this.lblBetinEuro.BackColor = System.Drawing.Color.Transparent;
+            this.lblBetinEuro.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBetinEuro.ForeColor = System.Drawing.Color.Yellow;
+            this.lblBetinEuro.Location = new System.Drawing.Point(468, 200);
+            this.lblBetinEuro.Name = "lblBetinEuro";
+            this.lblBetinEuro.Size = new System.Drawing.Size(97, 33);
+            this.lblBetinEuro.TabIndex = 14;
+            this.lblBetinEuro.Text = "Wette";
+            // 
+            // TableForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1071, 558);
+            this.Controls.Add(this.pnlMain);
+            this.Name = "TableForm";
+            this.Text = "Tisch";
+            this.pnlMain.ResumeLayout(false);
+            this.pnlMain.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Label lblTable;
+        private System.Windows.Forms.Label lblBet;
+        private System.Windows.Forms.Label lblTableName;
+        private System.Windows.Forms.Label lblDrawCard;
+        private System.Windows.Forms.Label lblDealerName;
+        private System.Windows.Forms.Button btnDrawCard;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.FlowLayoutPanel flpDrawCard;
+        private System.Windows.Forms.Label lblNameOfDealer;
+        private System.Windows.Forms.Label lblNameOfTable;
+        private System.Windows.Forms.Label lblBetinEuro;
+    }
+}

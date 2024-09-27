@@ -1,0 +1,166 @@
+using System.Text;
+
+namespace BlackJack2022_3AHITN.Lib
+{
+    /// <summary>
+    /// Die Summe der Karten in der Hand des Spielers wird berechnet und damit kann auch der Status festgestellt werden
+    /// In die Liste der Karten kann auch eine neue Karte hinzugefügt werden
+    /// </summary>
+    public class Hand
+    {
+        #region instancevariable
+        /// <summary>
+        /// Alle Karten des Spielers werden in einer Liste gespeichert
+        /// </summary>
+        readonly IList<Card> _cards = new List<Card>();
+        #endregion
+
+        #region property
+        /// <summary>
+        /// Die Summe der Karten des Spielers wird berechnet
+        /// </summary>
+        public int Sum
+        {
+            get
+            {
+                int sum = 0;
+
+                bool includesAce = false;
+
+                foreach (Card card in _cards)
+                {
+                    int value = (int)card.Value;
+
+                    if (value == 0)
+                    {
+                        includesAce = true;
+                    }
+
+                    if (value < 10)
+                    {
+                        sum += value + 1;
+                    }
+                    else
+                    {
+                        sum += 10;
+                    }
+                }
+
+                if (includesAce && sum <= 11)
+                {
+                    sum += 10;
+                }
+
+                return sum;
+            }
+        }
+        #endregion
+
+        #region methods
+        /// <summary>
+        /// Eine neue Karte wird in die Liste hinzugefügt
+        /// </summary>
+        /// <param name="card">Die Karte zum Hinzufügen</param>
+        public void AddCard(Card card)
+        {
+            _cards.Add(card);
+        }
+
+        /// <summary>
+        /// Eine Karte wird aus der Liste entfernt
+        /// </summary>
+        /// <param name="index">Index der Karte</param>
+        public void RemoveCard(int index)
+        {
+            _cards.Remove(_cards[index]);
+        }
+
+        /// <summary>
+        /// Die Karten werden ausgegeben
+        /// </summary>
+        /// <returns>Liefert die Liste der Karten zurück</returns>
+        public IEnumerable<Card> GetCards()
+        {
+            return _cards;
+        }
+
+        /// <summary>
+        /// Wenn das Spiel zu Ende ist, werden alle vorhandenen Karten des Spielers vom Dealer gesammelt
+        /// </summary>
+        public void RemoveCards()
+        {
+            _cards.Clear();
+        }
+
+        /// <summary>
+        /// Der Status der Karten wird übermittelt
+        /// </summary>
+        /// <returns>Liefert den passenden Status für die Karten zurück</returns>
+        public HandStatus GetStatus()
+        {
+            if (Sum < 21)
+            {
+                return HandStatus.Normal;
+            }
+            else if (Sum == 21)
+            {
+                if (_cards.Count == 2)
+                {
+                    return HandStatus.BlackJack;
+                }
+                else if (GetNumberOfCards(CardValue.Seven) == 3)
+                {
+                    return HandStatus.TripleSeven;
+                }
+                else
+                {
+                    return HandStatus.Normal;
+                }
+            }
+            else
+            {
+                return HandStatus.Bust;
+            }
+        }
+
+        /// <summary>
+        /// Bestimmt die Anzahl der Karten mit dem übergebenen Kartenwert in der Hand
+        /// </summary>
+        /// <param name="cardValue">Wert der Karte</param>
+        /// <returns></returns>
+        public int GetNumberOfCards(CardValue cardValue)
+        {
+            return _cards.ToList().FindAll(card => card.Value == cardValue).Count;
+        }
+
+        /// <summary>
+        /// Informationen über die Summe und den Status der Karten werden ausgegeben
+        /// </summary>
+        /// <returns>Liefert die Karten mit der Summe und dem Status zurück</returns>
+        public override string ToString()
+        {
+            StringBuilder handAsString = new StringBuilder();
+
+            foreach (Card card in _cards)
+            {
+                handAsString.Append(card);
+                handAsString.Append(", ");
+            }
+
+            if (handAsString.Length > 2)
+            {
+                handAsString.Remove(handAsString.Length - 2, 2);
+            }
+
+            handAsString.Append(" (Summe: ");
+            handAsString.Append(Sum);
+            handAsString.Append(", ");
+            handAsString.Append("Status: ");
+            handAsString.Append(GetStatus());
+            handAsString.Append(")");
+
+            return handAsString.ToString();
+        }
+        #endregion
+    }
+}

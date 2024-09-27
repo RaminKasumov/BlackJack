@@ -1,0 +1,74 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.ComponentModel;
+
+namespace BlackJack2022_3AHITN.Lib
+{
+    /// <summary>
+    /// Es gibt Tische mit Dealer und Kartendeck, an denen die Spieler BlackJack spielen können
+    /// </summary>
+    public class Table : ICardSource
+    {
+        #region properties
+        /// <summary>
+        /// Name des Tischs
+        /// </summary>
+        public string Name { get; }
+
+        /// <summary>
+        /// Dealer des Tischs
+        /// </summary>
+        public IPlayer Dealer { get; }
+
+        /// <summary>
+        /// Kartendeck für den Tisch
+        /// </summary>
+        CardDeck CardDeck { get; }
+
+        /// <summary>
+        /// Mindesteinsatz des Spielers
+        /// </summary>
+        public int MinimumBet { get; } = Settings.GetInstance().GetGameConfig().MinimumBet;
+        #endregion
+
+        #region constructors
+        /// <summary>
+        /// Es wird ein Dealer und ein gemischtes Kartendeck erzeugt
+        /// </summary>
+        /// <param name="name">Name des Tischs</param>
+        public Table(string name)
+        {
+            Name = name;
+            CardDeck = new CardDeck();
+            CardDeck.Shuffle();
+            DealerStrategy dealerStrategy = new DealerStrategy();
+            Dealer = new Dealer(CardDeck, dealerStrategy);
+        }
+
+        /// <summary>
+        /// Es wird ein Dealer und ein gemischtes Kartendeck erzeugt
+        /// </summary>
+        /// <param name="name">Name des Tischs</param>
+        /// <param name="minimumBet">Mindesteinsatz des Spielers</param>
+        public Table(string name, int minimumBet) : this(name)
+        {
+            MinimumBet = minimumBet;
+        }
+        #endregion
+
+        #region method
+        /// <summary>
+        /// Vom Kartendeck wird die erste Karte gezogen
+        /// </summary>
+        /// <returns>Die gezogene Karte wird zurückgeliefert</returns>
+        public Card DrawCard()
+        {
+            Card card = CardDeck.DrawCard();
+            return card;
+        }
+        #endregion
+    }
+}

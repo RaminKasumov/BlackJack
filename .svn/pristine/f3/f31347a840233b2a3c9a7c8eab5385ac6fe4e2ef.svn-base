@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BlackJack2022_3AHITN.Lib
+{
+    /// <summary>
+    /// Es gibt insgesamt drei Einstellungen für das Spiel BlackJack
+    /// </summary>
+    public class GameConfig : IGameConfig
+    {
+        #region properties
+        /// <summary>
+        /// Anzahl der Kartenpakete im Kartenstapel ist als 6 festgelegt
+        /// </summary>
+        public int PacksPerStack { get => 6; }
+
+        /// <summary>
+        /// Anzahl der in einem neuen Kartenstapel durchzuführenden Mischvorgänge ist als 10000 festgelegt
+        /// </summary>
+        public int ShuffleCount { get => 10000; }
+
+        /// <summary>
+        /// Mindesteinsatz des Spielers ist als 5 festgelegt
+        /// </summary>
+        public int MinimumBet { get => 5; }
+
+        /// <summary>
+        /// Anfangsguthaben des Spielers ist als 1000 Euro festgelegt
+        /// </summary>
+        public int StartBalance { get => 1000; }
+        #endregion
+    }
+}

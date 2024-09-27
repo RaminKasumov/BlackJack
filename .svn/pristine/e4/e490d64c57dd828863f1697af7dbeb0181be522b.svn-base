@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BlackJack2022_3AHITN.Lib
+{
+    /// <summary>
+    /// Der Konstruktor von der Klasse wird mithilfe der geerbten Klasse befüllt
+    /// </summary>
+    public class Dealer : AbstractPlayer
+    {
+        #region constructor
+        /// <summary>
+        /// Die gezogene Karte des Spielers wird von der geerbten Klasse übergeben
+        /// </summary>
+        /// <param name="cardSource">Deck der Karten</param>
+        internal Dealer(ICardSource cardSource, IPlayerStrategy strategy) : base("Dealer", cardSource, strategy)
+        {
+            
+        }
+        #endregion
+
+        #region method
+        /// <summary>
+        /// Nächste Aktion wird von der zugeordneten Strategie bestimmt
+        /// </summary>
+        /// <returns>Liefert die richtige Aktion zurück</returns>
+        public override PlayerAction PlayAction(Card firstDealerCard)
+        {
+            PlayerAction action = PlayAction(_strategy.GetNextAction(_hand), false);
+            return action;
+        }
+        #endregion
+    }
+}

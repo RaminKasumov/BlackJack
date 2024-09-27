@@ -1,0 +1,67 @@
+﻿using NUnit.Framework;
+
+namespace BlackJack2022_3AHITN.Lib.UnitTests
+{
+    /// <summary>
+    /// Alle testbaren Eigenschaften/Methoden der Klasse CardStack werden getestet und überprüft
+    /// </summary>
+    public class CardStackTests
+    {
+        [SetUp]
+        public void Setup()
+        {
+        }
+
+        [Test]
+        public void Test1()
+        {
+            Assert.Pass();
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob in der Klasse CardStack insgesamt 52 Karten erstellt werden
+        /// </summary>
+        [Test]
+        public void Cards_NewCardStack_ReturnTrueAmountOfCards()
+        {
+            //Arrange
+            CardStack cardStack = new CardStack();
+            int expected = 52;
+
+            //Act
+            int actual = cardStack.Cards.Length;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob in der Klasse Stack eine Karte zweimal vorkommt oder nicht
+        /// </summary>
+        [Test]
+        public void CreateCardStack_NewCardStack_ReturnErrorIfCardsAreDuplicate()
+        {
+            //Arrange
+            CardStack cardStack = new CardStack();
+            Card[] cards = cardStack.Cards;
+            bool expected = false;
+
+            //Act
+            bool duplicate = false;
+            for (int i = 0; i < cards.Length; i++)
+            {
+                for (int j = i + 1; j < cards.Length; j++)
+                {
+                    if (cards[i] == cards[j])
+                    {
+                        duplicate = true;
+                    }
+                }
+            }
+            bool actual = duplicate;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+    }
+}

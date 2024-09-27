@@ -1,0 +1,516 @@
+﻿
+namespace BlackJack2022_3AHITN.GUI
+{
+    partial class BlackJackForm
+    {
+        /// <summary>
+        /// Erforderliche Designervariable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Verwendete Ressourcen bereinigen.
+        /// </summary>
+        /// <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Vom Windows Form-Designer generierter Code
+
+        /// <summary>
+        /// Erforderliche Methode für die Designerunterstützung.
+        /// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BlackJackForm));
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.cbxStrategy = new System.Windows.Forms.ComboBox();
+            this.lblStrategy = new System.Windows.Forms.Label();
+            this.pbxCasinoIcon = new System.Windows.Forms.PictureBox();
+            this.pbxCoin10Added = new System.Windows.Forms.PictureBox();
+            this.pbxCoin50Added = new System.Windows.Forms.PictureBox();
+            this.pbxCoin100Added = new System.Windows.Forms.PictureBox();
+            this.pbxCoin20Added = new System.Windows.Forms.PictureBox();
+            this.pbxCoin200Added = new System.Windows.Forms.PictureBox();
+            this.pbxCoin100 = new System.Windows.Forms.PictureBox();
+            this.pbxCoin50 = new System.Windows.Forms.PictureBox();
+            this.pbxCoin200 = new System.Windows.Forms.PictureBox();
+            this.pbxCoin500Added = new System.Windows.Forms.PictureBox();
+            this.pbxCoin500 = new System.Windows.Forms.PictureBox();
+            this.pbxCoin20 = new System.Windows.Forms.PictureBox();
+            this.pbxCoin10 = new System.Windows.Forms.PictureBox();
+            this.nudBet = new System.Windows.Forms.NumericUpDown();
+            this.lblBet = new System.Windows.Forms.Label();
+            this.rdbHand = new System.Windows.Forms.RadioButton();
+            this.rdbTable = new System.Windows.Forms.RadioButton();
+            this.rdbGame = new System.Windows.Forms.RadioButton();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.tbxPlayerName = new System.Windows.Forms.TextBox();
+            this.lblPlayerName = new System.Windows.Forms.Label();
+            this.lblPresentation = new System.Windows.Forms.Label();
+            this.lblBlackJack = new System.Windows.Forms.Label();
+            this.pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCasinoIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin10Added)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin50Added)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin100Added)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin20Added)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin200Added)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin100)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin50)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin200)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin500Added)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin500)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBet)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
+            this.pnlMain.Controls.Add(this.cbxStrategy);
+            this.pnlMain.Controls.Add(this.lblStrategy);
+            this.pnlMain.Controls.Add(this.pbxCasinoIcon);
+            this.pnlMain.Controls.Add(this.pbxCoin10Added);
+            this.pnlMain.Controls.Add(this.pbxCoin50Added);
+            this.pnlMain.Controls.Add(this.pbxCoin100Added);
+            this.pnlMain.Controls.Add(this.pbxCoin20Added);
+            this.pnlMain.Controls.Add(this.pbxCoin200Added);
+            this.pnlMain.Controls.Add(this.pbxCoin100);
+            this.pnlMain.Controls.Add(this.pbxCoin50);
+            this.pnlMain.Controls.Add(this.pbxCoin200);
+            this.pnlMain.Controls.Add(this.pbxCoin500Added);
+            this.pnlMain.Controls.Add(this.pbxCoin500);
+            this.pnlMain.Controls.Add(this.pbxCoin20);
+            this.pnlMain.Controls.Add(this.pbxCoin10);
+            this.pnlMain.Controls.Add(this.nudBet);
+            this.pnlMain.Controls.Add(this.lblBet);
+            this.pnlMain.Controls.Add(this.rdbHand);
+            this.pnlMain.Controls.Add(this.rdbTable);
+            this.pnlMain.Controls.Add(this.rdbGame);
+            this.pnlMain.Controls.Add(this.btnStart);
+            this.pnlMain.Controls.Add(this.tbxPlayerName);
+            this.pnlMain.Controls.Add(this.lblPlayerName);
+            this.pnlMain.Controls.Add(this.lblPresentation);
+            this.pnlMain.Controls.Add(this.lblBlackJack);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.ForeColor = System.Drawing.SystemColors.Control;
+            this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1071, 558);
+            this.pnlMain.TabIndex = 0;
+            // 
+            // cbxStrategy
+            // 
+            this.cbxStrategy.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxStrategy.FormattingEnabled = true;
+            this.cbxStrategy.Items.AddRange(new object[] {
+            "Hard hands",
+            "Soft hands"});
+            this.cbxStrategy.Location = new System.Drawing.Point(624, 220);
+            this.cbxStrategy.Name = "cbxStrategy";
+            this.cbxStrategy.Size = new System.Drawing.Size(154, 31);
+            this.cbxStrategy.TabIndex = 25;
+            this.cbxStrategy.Visible = false;
+            // 
+            // lblStrategy
+            // 
+            this.lblStrategy.AutoSize = true;
+            this.lblStrategy.BackColor = System.Drawing.Color.Transparent;
+            this.lblStrategy.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStrategy.ForeColor = System.Drawing.Color.Peru;
+            this.lblStrategy.Location = new System.Drawing.Point(459, 220);
+            this.lblStrategy.Name = "lblStrategy";
+            this.lblStrategy.Size = new System.Drawing.Size(126, 28);
+            this.lblStrategy.TabIndex = 24;
+            this.lblStrategy.Text = "Strategie:";
+            this.lblStrategy.Visible = false;
+            // 
+            // pbxCasinoIcon
+            // 
+            this.pbxCasinoIcon.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCasinoIcon.Cursor = System.Windows.Forms.Cursors.NoMove2D;
+            this.pbxCasinoIcon.Image = ((System.Drawing.Image)(resources.GetObject("pbxCasinoIcon.Image")));
+            this.pbxCasinoIcon.Location = new System.Drawing.Point(206, 231);
+            this.pbxCasinoIcon.Name = "pbxCasinoIcon";
+            this.pbxCasinoIcon.Size = new System.Drawing.Size(129, 107);
+            this.pbxCasinoIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCasinoIcon.TabIndex = 23;
+            this.pbxCasinoIcon.TabStop = false;
+            // 
+            // pbxCoin10Added
+            // 
+            this.pbxCoin10Added.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCoin10Added.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxCoin10Added.Image = global::BlackJack2022_3AHITN.GUI.Properties.Resources.coin_status_added;
+            this.pbxCoin10Added.Location = new System.Drawing.Point(467, 319);
+            this.pbxCoin10Added.Name = "pbxCoin10Added";
+            this.pbxCoin10Added.Size = new System.Drawing.Size(60, 60);
+            this.pbxCoin10Added.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCoin10Added.TabIndex = 22;
+            this.pbxCoin10Added.TabStop = false;
+            this.pbxCoin10Added.Visible = false;
+            // 
+            // pbxCoin50Added
+            // 
+            this.pbxCoin50Added.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCoin50Added.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxCoin50Added.Image = global::BlackJack2022_3AHITN.GUI.Properties.Resources.coin_status_added;
+            this.pbxCoin50Added.Location = new System.Drawing.Point(627, 319);
+            this.pbxCoin50Added.Name = "pbxCoin50Added";
+            this.pbxCoin50Added.Size = new System.Drawing.Size(60, 60);
+            this.pbxCoin50Added.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCoin50Added.TabIndex = 21;
+            this.pbxCoin50Added.TabStop = false;
+            this.pbxCoin50Added.Visible = false;
+            // 
+            // pbxCoin100Added
+            // 
+            this.pbxCoin100Added.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCoin100Added.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxCoin100Added.Image = global::BlackJack2022_3AHITN.GUI.Properties.Resources.coin_status_added;
+            this.pbxCoin100Added.Location = new System.Drawing.Point(707, 319);
+            this.pbxCoin100Added.Name = "pbxCoin100Added";
+            this.pbxCoin100Added.Size = new System.Drawing.Size(60, 60);
+            this.pbxCoin100Added.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCoin100Added.TabIndex = 20;
+            this.pbxCoin100Added.TabStop = false;
+            this.pbxCoin100Added.Visible = false;
+            // 
+            // pbxCoin20Added
+            // 
+            this.pbxCoin20Added.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCoin20Added.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxCoin20Added.Image = global::BlackJack2022_3AHITN.GUI.Properties.Resources.coin_status_added;
+            this.pbxCoin20Added.Location = new System.Drawing.Point(547, 319);
+            this.pbxCoin20Added.Name = "pbxCoin20Added";
+            this.pbxCoin20Added.Size = new System.Drawing.Size(60, 60);
+            this.pbxCoin20Added.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCoin20Added.TabIndex = 19;
+            this.pbxCoin20Added.TabStop = false;
+            this.pbxCoin20Added.Visible = false;
+            // 
+            // pbxCoin200Added
+            // 
+            this.pbxCoin200Added.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCoin200Added.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxCoin200Added.Image = global::BlackJack2022_3AHITN.GUI.Properties.Resources.coin_status_added;
+            this.pbxCoin200Added.Location = new System.Drawing.Point(787, 319);
+            this.pbxCoin200Added.Name = "pbxCoin200Added";
+            this.pbxCoin200Added.Size = new System.Drawing.Size(60, 60);
+            this.pbxCoin200Added.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCoin200Added.TabIndex = 18;
+            this.pbxCoin200Added.TabStop = false;
+            this.pbxCoin200Added.Visible = false;
+            // 
+            // pbxCoin100
+            // 
+            this.pbxCoin100.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCoin100.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxCoin100.Image = global::BlackJack2022_3AHITN.GUI.Properties.Resources.coin_100;
+            this.pbxCoin100.Location = new System.Drawing.Point(707, 319);
+            this.pbxCoin100.Name = "pbxCoin100";
+            this.pbxCoin100.Size = new System.Drawing.Size(60, 60);
+            this.pbxCoin100.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCoin100.TabIndex = 17;
+            this.pbxCoin100.TabStop = false;
+            this.pbxCoin100.Visible = false;
+            this.pbxCoin100.Click += new System.EventHandler(this.pbxCoin100_Click);
+            // 
+            // pbxCoin50
+            // 
+            this.pbxCoin50.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCoin50.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxCoin50.Image = global::BlackJack2022_3AHITN.GUI.Properties.Resources.coin_50;
+            this.pbxCoin50.Location = new System.Drawing.Point(627, 319);
+            this.pbxCoin50.Name = "pbxCoin50";
+            this.pbxCoin50.Size = new System.Drawing.Size(60, 60);
+            this.pbxCoin50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCoin50.TabIndex = 16;
+            this.pbxCoin50.TabStop = false;
+            this.pbxCoin50.Visible = false;
+            this.pbxCoin50.Click += new System.EventHandler(this.pbxCoin50_Click);
+            // 
+            // pbxCoin200
+            // 
+            this.pbxCoin200.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCoin200.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxCoin200.Image = global::BlackJack2022_3AHITN.GUI.Properties.Resources.coin_200;
+            this.pbxCoin200.Location = new System.Drawing.Point(787, 319);
+            this.pbxCoin200.Name = "pbxCoin200";
+            this.pbxCoin200.Size = new System.Drawing.Size(60, 60);
+            this.pbxCoin200.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCoin200.TabIndex = 15;
+            this.pbxCoin200.TabStop = false;
+            this.pbxCoin200.Visible = false;
+            this.pbxCoin200.Click += new System.EventHandler(this.pbxCoin200_Click);
+            // 
+            // pbxCoin500Added
+            // 
+            this.pbxCoin500Added.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCoin500Added.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxCoin500Added.Image = global::BlackJack2022_3AHITN.GUI.Properties.Resources.coin_status_added;
+            this.pbxCoin500Added.Location = new System.Drawing.Point(867, 319);
+            this.pbxCoin500Added.Name = "pbxCoin500Added";
+            this.pbxCoin500Added.Size = new System.Drawing.Size(60, 60);
+            this.pbxCoin500Added.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCoin500Added.TabIndex = 13;
+            this.pbxCoin500Added.TabStop = false;
+            this.pbxCoin500Added.Visible = false;
+            // 
+            // pbxCoin500
+            // 
+            this.pbxCoin500.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCoin500.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxCoin500.Image = global::BlackJack2022_3AHITN.GUI.Properties.Resources.coin_500;
+            this.pbxCoin500.Location = new System.Drawing.Point(867, 319);
+            this.pbxCoin500.Name = "pbxCoin500";
+            this.pbxCoin500.Size = new System.Drawing.Size(60, 60);
+            this.pbxCoin500.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCoin500.TabIndex = 12;
+            this.pbxCoin500.TabStop = false;
+            this.pbxCoin500.Visible = false;
+            this.pbxCoin500.Click += new System.EventHandler(this.pbxCoin500_Click);
+            // 
+            // pbxCoin20
+            // 
+            this.pbxCoin20.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCoin20.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxCoin20.Image = global::BlackJack2022_3AHITN.GUI.Properties.Resources.coin_20;
+            this.pbxCoin20.Location = new System.Drawing.Point(547, 319);
+            this.pbxCoin20.Name = "pbxCoin20";
+            this.pbxCoin20.Size = new System.Drawing.Size(60, 60);
+            this.pbxCoin20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCoin20.TabIndex = 11;
+            this.pbxCoin20.TabStop = false;
+            this.pbxCoin20.Visible = false;
+            this.pbxCoin20.Click += new System.EventHandler(this.pbxCoin20_Click);
+            // 
+            // pbxCoin10
+            // 
+            this.pbxCoin10.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCoin10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxCoin10.Image = global::BlackJack2022_3AHITN.GUI.Properties.Resources.coin_10;
+            this.pbxCoin10.Location = new System.Drawing.Point(467, 319);
+            this.pbxCoin10.Name = "pbxCoin10";
+            this.pbxCoin10.Size = new System.Drawing.Size(60, 60);
+            this.pbxCoin10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCoin10.TabIndex = 10;
+            this.pbxCoin10.TabStop = false;
+            this.pbxCoin10.Visible = false;
+            this.pbxCoin10.Click += new System.EventHandler(this.pbxCoin10_Click);
+            // 
+            // nudBet
+            // 
+            this.nudBet.Cursor = System.Windows.Forms.Cursors.Default;
+            this.nudBet.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudBet.Location = new System.Drawing.Point(839, 265);
+            this.nudBet.Maximum = new decimal(new int[] {
+            200000,
+            0,
+            0,
+            0});
+            this.nudBet.Name = "nudBet";
+            this.nudBet.Size = new System.Drawing.Size(111, 32);
+            this.nudBet.TabIndex = 9;
+            this.nudBet.TabStop = false;
+            this.nudBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudBet.ThousandsSeparator = true;
+            this.nudBet.Visible = false;
+            this.nudBet.ValueChanged += new System.EventHandler(this.nudBet_ValueChanged);
+            // 
+            // lblBet
+            // 
+            this.lblBet.AutoSize = true;
+            this.lblBet.BackColor = System.Drawing.Color.Transparent;
+            this.lblBet.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBet.ForeColor = System.Drawing.Color.Peru;
+            this.lblBet.Location = new System.Drawing.Point(459, 265);
+            this.lblBet.Name = "lblBet";
+            this.lblBet.Size = new System.Drawing.Size(311, 28);
+            this.lblBet.TabIndex = 8;
+            this.lblBet.Text = "Einsatz: (Kapital: 1000 €)";
+            this.lblBet.Visible = false;
+            // 
+            // rdbHand
+            // 
+            this.rdbHand.AutoSize = true;
+            this.rdbHand.BackColor = System.Drawing.Color.LimeGreen;
+            this.rdbHand.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbHand.ForeColor = System.Drawing.Color.Black;
+            this.rdbHand.Location = new System.Drawing.Point(709, 411);
+            this.rdbHand.Name = "rdbHand";
+            this.rdbHand.Size = new System.Drawing.Size(96, 32);
+            this.rdbHand.TabIndex = 7;
+            this.rdbHand.TabStop = true;
+            this.rdbHand.Text = "Hand";
+            this.rdbHand.UseVisualStyleBackColor = false;
+            this.rdbHand.CheckedChanged += new System.EventHandler(this.rdbHand_CheckedChanged);
+            // 
+            // rdbTable
+            // 
+            this.rdbTable.AutoSize = true;
+            this.rdbTable.BackColor = System.Drawing.Color.LimeGreen;
+            this.rdbTable.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbTable.ForeColor = System.Drawing.Color.Black;
+            this.rdbTable.Location = new System.Drawing.Point(890, 411);
+            this.rdbTable.Name = "rdbTable";
+            this.rdbTable.Size = new System.Drawing.Size(95, 32);
+            this.rdbTable.TabIndex = 6;
+            this.rdbTable.TabStop = true;
+            this.rdbTable.Text = "Tisch";
+            this.rdbTable.UseVisualStyleBackColor = false;
+            this.rdbTable.CheckedChanged += new System.EventHandler(this.rdbTable_CheckedChanged);
+            // 
+            // rdbGame
+            // 
+            this.rdbGame.AutoSize = true;
+            this.rdbGame.BackColor = System.Drawing.Color.LimeGreen;
+            this.rdbGame.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbGame.ForeColor = System.Drawing.Color.Black;
+            this.rdbGame.Location = new System.Drawing.Point(529, 411);
+            this.rdbGame.Name = "rdbGame";
+            this.rdbGame.Size = new System.Drawing.Size(91, 32);
+            this.rdbGame.TabIndex = 5;
+            this.rdbGame.TabStop = true;
+            this.rdbGame.Text = "Spiel";
+            this.rdbGame.UseVisualStyleBackColor = false;
+            this.rdbGame.CheckedChanged += new System.EventHandler(this.rdbGame_CheckedChanged);
+            // 
+            // btnStart
+            // 
+            this.btnStart.BackColor = System.Drawing.Color.Gold;
+            this.btnStart.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnStart.FlatAppearance.BorderSize = 5;
+            this.btnStart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnStart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
+            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStart.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnStart.Location = new System.Drawing.Point(678, 473);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(177, 49);
+            this.btnStart.TabIndex = 4;
+            this.btnStart.Text = "Starten";
+            this.btnStart.UseVisualStyleBackColor = false;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // tbxPlayerName
+            // 
+            this.tbxPlayerName.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxPlayerName.Location = new System.Drawing.Point(740, 168);
+            this.tbxPlayerName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxPlayerName.Name = "tbxPlayerName";
+            this.tbxPlayerName.Size = new System.Drawing.Size(227, 35);
+            this.tbxPlayerName.TabIndex = 3;
+            this.tbxPlayerName.TextChanged += new System.EventHandler(this.tbxPlayerName_TextChanged);
+            // 
+            // lblPlayerName
+            // 
+            this.lblPlayerName.AutoSize = true;
+            this.lblPlayerName.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerName.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerName.ForeColor = System.Drawing.Color.Peru;
+            this.lblPlayerName.Location = new System.Drawing.Point(459, 171);
+            this.lblPlayerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPlayerName.Name = "lblPlayerName";
+            this.lblPlayerName.Size = new System.Drawing.Size(234, 28);
+            this.lblPlayerName.TabIndex = 2;
+            this.lblPlayerName.Text = "Name des Spielers:";
+            // 
+            // lblPresentation
+            // 
+            this.lblPresentation.AutoSize = true;
+            this.lblPresentation.BackColor = System.Drawing.Color.Transparent;
+            this.lblPresentation.Font = new System.Drawing.Font("Century", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPresentation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblPresentation.Location = new System.Drawing.Point(530, 92);
+            this.lblPresentation.Name = "lblPresentation";
+            this.lblPresentation.Size = new System.Drawing.Size(352, 39);
+            this.lblPresentation.TabIndex = 1;
+            this.lblPresentation.Text = "Kundenpräsentation";
+            // 
+            // lblBlackJack
+            // 
+            this.lblBlackJack.AutoSize = true;
+            this.lblBlackJack.BackColor = System.Drawing.Color.Transparent;
+            this.lblBlackJack.Font = new System.Drawing.Font("Century", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBlackJack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblBlackJack.Location = new System.Drawing.Point(503, 20);
+            this.lblBlackJack.Name = "lblBlackJack";
+            this.lblBlackJack.Size = new System.Drawing.Size(415, 60);
+            this.lblBlackJack.TabIndex = 0;
+            this.lblBlackJack.Text = "BlackJack-Spiel";
+            // 
+            // BlackJackForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1071, 558);
+            this.Controls.Add(this.pnlMain);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "BlackJackForm";
+            this.Text = "BlackJack";
+            this.pnlMain.ResumeLayout(false);
+            this.pnlMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCasinoIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin10Added)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin50Added)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin100Added)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin20Added)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin200Added)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin100)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin50)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin200)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin500Added)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin500)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCoin10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBet)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Label lblBlackJack;
+        private System.Windows.Forms.Label lblPresentation;
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.TextBox tbxPlayerName;
+        private System.Windows.Forms.Label lblPlayerName;
+        private System.Windows.Forms.RadioButton rdbTable;
+        private System.Windows.Forms.RadioButton rdbGame;
+        private System.Windows.Forms.RadioButton rdbHand;
+        private System.Windows.Forms.Label lblBet;
+        private System.Windows.Forms.PictureBox pbxCoin10;
+        private System.Windows.Forms.PictureBox pbxCoin100;
+        private System.Windows.Forms.PictureBox pbxCoin50;
+        private System.Windows.Forms.PictureBox pbxCoin200;
+        private System.Windows.Forms.PictureBox pbxCoin500Added;
+        private System.Windows.Forms.PictureBox pbxCoin500;
+        private System.Windows.Forms.PictureBox pbxCoin20;
+        private System.Windows.Forms.NumericUpDown nudBet;
+        private System.Windows.Forms.PictureBox pbxCoin10Added;
+        private System.Windows.Forms.PictureBox pbxCoin50Added;
+        private System.Windows.Forms.PictureBox pbxCoin100Added;
+        private System.Windows.Forms.PictureBox pbxCoin20Added;
+        private System.Windows.Forms.PictureBox pbxCoin200Added;
+        private System.Windows.Forms.PictureBox pbxCasinoIcon;
+        private System.Windows.Forms.Label lblStrategy;
+        private System.Windows.Forms.ComboBox cbxStrategy;
+    }
+}
+

@@ -1,0 +1,55 @@
+﻿using NUnit.Framework;
+
+namespace BlackJack2022_3AHITN.Lib.UnitTests
+{
+    /// <summary>
+    /// Alle testbaren Eigenschaften/Methoden der Klasse Table werden getestet und überprüft
+    /// </summary>
+    public class TableTests
+    {
+        [SetUp]
+        public void Setup()
+        {
+        }
+
+        [Test]
+        public void Test1()
+        {
+            Assert.Pass();
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob in der Klasse Table der richtige Name des Tischs ausgegeben wird
+        /// </summary>
+        [Test]
+        public void Name_NewTable_ReturnTrueNameOfTable()
+        {
+            //Arrange
+            Table table = new Table("Tisch1");
+            string expected = "Tisch1";
+
+            //Act
+            string actual = table.Name;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob in der Klasse Table der richtige Mindesteinsatz des Spielers zurückgeliefert wird
+        /// </summary>
+        [Test]
+        public void MinimumBet_NewTable_ReturnTrueMinimumBet()
+        {
+            //Arrange
+            Table table = new Table("Tisch2", 1000);
+            int expected = 1000;
+
+            //Act
+            int actual = table.MinimumBet;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+    }
+}

@@ -1,0 +1,91 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\User\\source\\repos\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.WPF\\BlackJack2022_3AHITN.WPF.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\User\\source\\repos\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj",
+        "projectName": "BlackJack2022_3AHITN.Lib",
+        "projectPath": "C:\\Users\\User\\source\\repos\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\User\\source\\repos\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.WPF\\BlackJack2022_3AHITN.WPF.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.WPF\\BlackJack2022_3AHITN.WPF.csproj",
+        "projectName": "BlackJack2022_3AHITN.WPF",
+        "projectPath": "C:\\Users\\User\\source\\repos\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.WPF\\BlackJack2022_3AHITN.WPF.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.WPF\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {
+              "C:\\Users\\User\\source\\repos\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "NAudio": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,306 @@
+﻿using System;
+using System.Collections.Generic;
+using NUnit.Framework;
+using System.Text.RegularExpressions;
+using BlackJack2022_3AHITN.Lib;
+
+namespace BlackJack2022_3AHITN.Lib.UnitTests
+{
+    /// <summary>
+    /// Alle testbaren Eigenschaften/Methoden der Klasse Hand werden getestet und überprüft
+    /// </summary>
+    public class HandTests
+    {
+        [SetUp]
+        public void Setup()
+        {
+        }
+
+        [Test]
+        public void Test1()
+        {
+            Assert.Pass();
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob in der Klasse Hand die richtige Summe der Karten ausgegeben wird
+        /// </summary>
+        [Test]
+        public void Sum_NewHandWithCards_Return21()
+        {
+            //Arrange
+            Hand hand = new Hand();
+            hand.AddCard(new Card(CardColor.Spade, CardValue.Four));
+            hand.AddCard(new Card(CardColor.Diamond, CardValue.Eight));
+            hand.AddCard(new Card(CardColor.Heart, CardValue.Nine));
+            int expected = 21;
+
+            //Act
+            int actual = hand.Sum;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob in der Klasse Hand die richtige Summe von mehreren Karten ausgegeben wird
+        /// </summary>
+        [Test]
+        public void Sum_NewHandWithMoreCards_Return20()
+        {
+            //Arrange
+            Hand hand = new Hand();
+            hand.AddCard(new Card(CardColor.Heart, CardValue.Three));
+            hand.AddCard(new Card(CardColor.Club, CardValue.Six));
+            hand.AddCard(new Card(CardColor.Spade, CardValue.King));
+            hand.AddCard(new Card(CardColor.Diamond, CardValue.Ace));
+            int expected = 20;
+
+            //Act
+            int actual = hand.Sum;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob die Summe der Karten richtig ist, wenn es eine BildKarte gibt
+        /// </summary>
+        [Test]
+        public void Sum_NewHandWithFaceCard_Return12()
+        {
+            //Arrange
+            Hand hand = new Hand();
+            hand.AddCard(new Card(CardColor.Spade, CardValue.Two));
+            hand.AddCard(new Card(CardColor.Club, CardValue.Jack));
+            int expected = 12;
+
+            //Act
+            int actual = hand.Sum;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob die Summe der Karten richtig ist, wenn es mehrere Bildkarten gibt
+        /// </summary>
+        [Test]
+        public void Sum_NewHandWithMoreFaceCards_Return21()
+        {
+            //Arrange
+            Hand hand = new Hand();
+            hand.AddCard(new Card(CardColor.Heart, CardValue.Ace));
+            hand.AddCard(new Card(CardColor.Diamond, CardValue.Jack));
+            hand.AddCard(new Card(CardColor.Spade, CardValue.Queen));
+            int expected = 21;
+
+            //Act
+            int actual = hand.Sum;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob die Summe der Karten richtig ist, wenn die Karten einen Ass enthalten
+        /// </summary>
+        [Test]
+        public void Sum_NewHandWithAceCard_Return13()
+        {
+            //Arrange
+            Hand hand = new Hand();
+            hand.AddCard(new Card(CardColor.Club, CardValue.Two));
+            hand.AddCard(new Card(CardColor.Heart, CardValue.Ten));
+            hand.AddCard(new Card(CardColor.Spade, CardValue.Ace));
+            int expected = 13;
+
+            //Act
+            int actual = hand.Sum;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob die Summe der Karten richtig ist, wenn die Karten einen Ass enthalten und Ass die erste Karte ist
+        /// </summary>
+        [Test]
+        public void Sum_NewHandWithAceAsFirstCard_Return13()
+        {
+            //Arrange
+            Hand hand = new Hand();
+            hand.AddCard(new Card(CardColor.Diamond, CardValue.Ace));
+            hand.AddCard(new Card(CardColor.Spade, CardValue.Ten));
+            hand.AddCard(new Card(CardColor.Heart, CardValue.Two));
+            int expected = 13;
+
+            //Act
+            int actual = hand.Sum;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob in der Klasse Hand die richtige Summe ausgegeben wird, wenn viele Karten den Wert Ass haben
+        /// </summary>
+        [Test]
+        public void Sum_NewHandWithMoreAceCards_Return19()
+        {
+            //Arrange
+            Hand hand = new Hand();
+            for (int i = 0; i < 4; i++)
+            {
+                hand.AddCard(new Card(CardColor.Spade, CardValue.Ace));
+            }
+            hand.AddCard(new Card(CardColor.Club, CardValue.Five));
+            int expected = 19;
+
+            //Act
+            int actual = hand.Sum;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob in der Klasse Hand die richtige Summe ausgegeben wird, wenn mehrere Karten den Wert Ass haben
+        /// </summary>
+        [Test]
+        public void Sum_NewHandWithTwoAceCards_Return21()
+        {
+            //Arrange
+            Hand hand = new Hand();
+            hand.AddCard(new Card(CardColor.Club, CardValue.Ace));
+            hand.AddCard(new Card(CardColor.Spade, CardValue.Nine));
+            hand.AddCard(new Card(CardColor.Heart, CardValue.Ace));
+            int expected = 21;
+
+            //Act
+            int actual = hand.Sum;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob in der Klasse Hand die richtige Summe ausgegeben wird, wenn mehrere Karten den Wert Ass haben
+        /// </summary>
+        [Test]
+        public void Sum_NewHandWithTwoAceCards_Return20()
+        {
+            //Arrange
+            Hand hand = new Hand();
+            hand.AddCard(new Card(CardColor.Club, CardValue.Ace));
+            hand.AddCard(new Card(CardColor.Spade, CardValue.Eight));
+            hand.AddCard(new Card(CardColor.Diamond, CardValue.Jack));
+            hand.AddCard(new Card(CardColor.Heart, CardValue.Ace));
+            int expected = 20;
+
+            //Act
+            int actual = hand.Sum;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob in der Klasse Hand die richtige Summe ausgegeben wird, wenn alle Karten den Wert Ass haben
+        /// </summary>
+        [Test]
+        public void Sum_NewHandWithAceCards_Return18()
+        {
+            //Arrange
+            Hand hand = new Hand();
+            for (int i = 0; i < 8; i++)
+            {
+                hand.AddCard(new Card(CardColor.Diamond, CardValue.Ace));
+            }
+            int expected = 18;
+
+            //Act
+            int actual = hand.Sum;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob in der Klasse Hand der richtige Status der Karten ausgegeben wird (In diesem Fall BlackJack, weil es 2 Karten gibt und die Summe = 21 ist)
+        /// </summary>
+        [Test]
+        public void GetStatus_NewHand_ReturnBlackJack()
+        {
+            //Arrange
+            Hand hand = new Hand();
+            hand.AddCard(new Card(CardColor.Club, CardValue.Queen));
+            hand.AddCard(new Card(CardColor.Spade, CardValue.Ace));
+            HandStatus expected = HandStatus.BlackJack;
+
+            //Act
+            HandStatus actual = hand.GetStatus();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob in der Klasse Hand der richtige Status der Karten ausgegeben wird (In diesem Fall Bust, weil die Summe > 21 ist)
+        /// </summary>
+        [Test]
+        public void GetStatus_NewHand_ReturnBust()
+        {
+            //Arrange
+            Hand hand = new Hand();
+            hand.AddCard(new Card(CardColor.Spade, CardValue.King));
+            hand.AddCard(new Card(CardColor.Diamond, CardValue.Jack));
+            hand.AddCard(new Card(CardColor.Heart, CardValue.Three));
+            HandStatus expected = HandStatus.Bust;
+
+            //Act
+            HandStatus actual = hand.GetStatus();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob in der Klasse Hand die richtige Summe und der Status der Karten ausgegeben wird
+        /// </summary>
+        [Test]
+        public void ToString_NewHand_ReturnTrueSumAndStatusOfCards()
+        {
+            //Arrange
+            Hand hand = new Hand();
+            hand.AddCard(new Card(CardColor.Diamond, CardValue.Three));
+            hand.AddCard(new Card(CardColor.Spade, CardValue.Five));
+            string expected = "Symbol: Diamond, Wert: Three, Symbol: Spade, Wert: Five (Summe: 8, Status: Normal)";
+
+            //Act
+            string actual = hand.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird mithilfe von Regex getestet, ob in der Klasse Hand die richtige Summe und der Status der Karten ausgegeben wird
+        /// </summary>
+        [Test]
+        public void ToString_NewHand_ReturnTrueSumAndStatusOfCardsWithRegex()
+        {
+            //Arrange
+            Hand hand = new Hand();
+            hand.AddCard(new Card(CardColor.Diamond, CardValue.Three));
+            hand.AddCard(new Card(CardColor.Spade, CardValue.Five));
+            string expected = @"Symbol: \w+, Wert: \w+, Symbol: \w+, Wert: \w+ \(Summe: \d+, Status: \w+\)";
+
+            //Act
+            string actual = hand.ToString();
+
+            //Assert
+            Assert.IsTrue(Regex.IsMatch(actual, expected));
+        }
+    }
+}

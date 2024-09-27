@@ -1,0 +1,36 @@
+
+namespace BlackJack2022_3AHITN.Lib
+{
+    /// <summary>
+    /// Design Pattern Factory wird hier für alle Teilnehmer angewendet (Insgesamt gibt es zwei Methoden, damit man nicht mehrere Instanzen erstellt)
+    /// </summary>
+    public class PlayerFactory
+    {
+        #region methods
+        /// <summary>
+        /// Eine neue Instanz für den Spieler wird erstellt und ausgegeben
+        /// </summary>
+        /// <param name="name">Name des Spielers</param>
+        /// <param name="cardSource">Deck der Karten</param>
+        /// <param name="strategy">Strategie</param>
+        /// <returns>Liefert für den Spieler eine neue Instanz zurück</returns>
+        public IPlayer CreatePlayer(string name, ICardSource cardSource, IPlayerStrategy strategy)
+        {
+            IPlayer player = new Player(name, new SevenCardSource(), strategy);
+            return player;
+        }
+
+        /// <summary>
+        /// Eine neue Instanz für den Dealer wird erstellt und ausgegeben
+        /// </summary>
+        /// <param name="cardSource">Deck der Karten</param>
+        /// <param name="strategy">Strategie</param>
+        /// <returns>Liefert für den Dealer eine neue Instanz zurück</returns>
+        public IPlayer CreateDealer(ICardSource cardSource, IPlayerStrategy strategy)
+        {
+            IPlayer dealer = new Dealer(cardSource, strategy);
+            return dealer;
+        }
+        #endregion
+    }
+}

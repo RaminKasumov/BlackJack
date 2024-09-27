@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJack2022_3AHITN.Lib", "BlackJack2022_3AHITN.Lib\BlackJack2022_3AHITN.Lib.csproj", "{2735E6FE-D7A3-4D39-8E1E-FE7A5FFCE89C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlackJack2022_3AHITN.Lib.UnitTests", "BlackJack2022_3AHITN.Lib.UnitTests\BlackJack2022_3AHITN.Lib.UnitTests.csproj", "{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJack2022_3AHITN.UI", "BlackJack2022_3AHITN.UI\BlackJack2022_3AHITN.UI.csproj", "{933F0EB7-5947-474D-9005-A0D0FA79B2F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJack2022_3AHITN.GUI", "BlackJack2022_3AHITN.GUI\BlackJack2022_3AHITN.GUI.csproj", "{8A4AB152-E239-415E-B92D-54E2669609C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlackJack2022_3AHITN.WPF", "BlackJack2022_3AHITN.WPF\BlackJack2022_3AHITN.WPF.csproj", "{0CC5DD47-EF30-41F1-A8F5-45AA12536033}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2735E6FE-D7A3-4D39-8E1E-FE7A5FFCE89C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2735E6FE-D7A3-4D39-8E1E-FE7A5FFCE89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2735E6FE-D7A3-4D39-8E1E-FE7A5FFCE89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2735E6FE-D7A3-4D39-8E1E-FE7A5FFCE89C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{933F0EB7-5947-474D-9005-A0D0FA79B2F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{933F0EB7-5947-474D-9005-A0D0FA79B2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{933F0EB7-5947-474D-9005-A0D0FA79B2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{933F0EB7-5947-474D-9005-A0D0FA79B2F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A4AB152-E239-415E-B92D-54E2669609C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A4AB152-E239-415E-B92D-54E2669609C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A4AB152-E239-415E-B92D-54E2669609C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A4AB152-E239-415E-B92D-54E2669609C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CC5DD47-EF30-41F1-A8F5-45AA12536033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CC5DD47-EF30-41F1-A8F5-45AA12536033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CC5DD47-EF30-41F1-A8F5-45AA12536033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CC5DD47-EF30-41F1-A8F5-45AA12536033}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3510F40A-18BF-4B48-926F-EF4DC73F8273}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN2019 - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

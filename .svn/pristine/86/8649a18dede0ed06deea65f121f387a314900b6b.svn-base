@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BlackJack2022_3AHITN.Lib
+{
+    /// <summary>
+    /// Entweder hat der Spieler oder Dealer das Spiel gewonnen oder niemand (unentschieden)
+    /// </summary>
+    public enum GameWinner
+    {
+        None,
+        Player,
+        Dealer
+    }
+}

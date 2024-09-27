@@ -1,0 +1,175 @@
+﻿
+namespace BlackJack2022_3AHITN.GUI
+{
+    partial class AddCardForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.btnRandomChoice = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.cbxCardColor = new System.Windows.Forms.ComboBox();
+            this.cbxCardValue = new System.Windows.Forms.ComboBox();
+            this.lblCardColor = new System.Windows.Forms.Label();
+            this.lblCardValue = new System.Windows.Forms.Label();
+            this.lblAddCard = new System.Windows.Forms.Label();
+            this.pnlMain.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlMain.BackgroundImage = global::BlackJack2022_3AHITN.GUI.Properties.Resources.Hand;
+            this.pnlMain.Controls.Add(this.btnRandomChoice);
+            this.pnlMain.Controls.Add(this.btnConfirm);
+            this.pnlMain.Controls.Add(this.cbxCardColor);
+            this.pnlMain.Controls.Add(this.cbxCardValue);
+            this.pnlMain.Controls.Add(this.lblCardColor);
+            this.pnlMain.Controls.Add(this.lblCardValue);
+            this.pnlMain.Controls.Add(this.lblAddCard);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1071, 559);
+            this.pnlMain.TabIndex = 0;
+            // 
+            // btnRandomChoice
+            // 
+            this.btnRandomChoice.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnRandomChoice.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnRandomChoice.FlatAppearance.BorderSize = 5;
+            this.btnRandomChoice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Turquoise;
+            this.btnRandomChoice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
+            this.btnRandomChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRandomChoice.Font = new System.Drawing.Font("Century", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRandomChoice.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btnRandomChoice.Location = new System.Drawing.Point(712, 248);
+            this.btnRandomChoice.Name = "btnRandomChoice";
+            this.btnRandomChoice.Size = new System.Drawing.Size(227, 45);
+            this.btnRandomChoice.TabIndex = 6;
+            this.btnRandomChoice.Text = "Zufällige Auswahl";
+            this.btnRandomChoice.UseVisualStyleBackColor = false;
+            this.btnRandomChoice.Click += new System.EventHandler(this.btnRandomChoice_Click);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.Peru;
+            this.btnConfirm.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnConfirm.FlatAppearance.BorderSize = 5;
+            this.btnConfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LimeGreen;
+            this.btnConfirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirm.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnConfirm.Location = new System.Drawing.Point(459, 447);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(206, 55);
+            this.btnConfirm.TabIndex = 5;
+            this.btnConfirm.Text = "Bestätigen";
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // cbxCardColor
+            // 
+            this.cbxCardColor.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCardColor.FormattingEnabled = true;
+            this.cbxCardColor.Location = new System.Drawing.Point(516, 201);
+            this.cbxCardColor.Name = "cbxCardColor";
+            this.cbxCardColor.Size = new System.Drawing.Size(149, 31);
+            this.cbxCardColor.TabIndex = 4;
+            // 
+            // cbxCardValue
+            // 
+            this.cbxCardValue.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCardValue.FormattingEnabled = true;
+            this.cbxCardValue.Location = new System.Drawing.Point(474, 292);
+            this.cbxCardValue.Name = "cbxCardValue";
+            this.cbxCardValue.Size = new System.Drawing.Size(149, 31);
+            this.cbxCardValue.TabIndex = 3;
+            // 
+            // lblCardColor
+            // 
+            this.lblCardColor.AutoSize = true;
+            this.lblCardColor.BackColor = System.Drawing.Color.Transparent;
+            this.lblCardColor.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCardColor.ForeColor = System.Drawing.Color.Gold;
+            this.lblCardColor.Location = new System.Drawing.Point(179, 197);
+            this.lblCardColor.Name = "lblCardColor";
+            this.lblCardColor.Size = new System.Drawing.Size(284, 35);
+            this.lblCardColor.TabIndex = 2;
+            this.lblCardColor.Text = "Symbol der Karte:";
+            // 
+            // lblCardValue
+            // 
+            this.lblCardValue.AutoSize = true;
+            this.lblCardValue.BackColor = System.Drawing.Color.Transparent;
+            this.lblCardValue.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCardValue.ForeColor = System.Drawing.Color.Gold;
+            this.lblCardValue.Location = new System.Drawing.Point(179, 288);
+            this.lblCardValue.Name = "lblCardValue";
+            this.lblCardValue.Size = new System.Drawing.Size(248, 35);
+            this.lblCardValue.TabIndex = 1;
+            this.lblCardValue.Text = "Wert der Karte:";
+            // 
+            // lblAddCard
+            // 
+            this.lblAddCard.AutoSize = true;
+            this.lblAddCard.BackColor = System.Drawing.Color.Transparent;
+            this.lblAddCard.Font = new System.Drawing.Font("Century", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddCard.ForeColor = System.Drawing.Color.Chartreuse;
+            this.lblAddCard.Location = new System.Drawing.Point(340, 25);
+            this.lblAddCard.Name = "lblAddCard";
+            this.lblAddCard.Size = new System.Drawing.Size(431, 57);
+            this.lblAddCard.TabIndex = 0;
+            this.lblAddCard.Text = "Karte hinzufügen\r\n";
+            // 
+            // AddCardForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1071, 559);
+            this.Controls.Add(this.pnlMain);
+            this.Name = "AddCardForm";
+            this.Text = "Karte hinzufügen";
+            this.pnlMain.ResumeLayout(false);
+            this.pnlMain.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Label lblAddCard;
+        private System.Windows.Forms.ComboBox cbxCardColor;
+        private System.Windows.Forms.ComboBox cbxCardValue;
+        private System.Windows.Forms.Label lblCardColor;
+        private System.Windows.Forms.Label lblCardValue;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnRandomChoice;
+    }
+}

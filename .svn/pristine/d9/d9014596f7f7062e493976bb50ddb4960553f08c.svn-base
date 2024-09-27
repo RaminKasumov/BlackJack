@@ -1,0 +1,320 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BlackJack2022_3AHITN.Lib
+{
+    /// <summary>
+    /// Alle nötigen Instanzvariablen und Methoden für das BlackJack-Spiel werden implementiert
+    /// </summary>
+    public class Game : IGame
+    {
+        #region instancevariables
+        /// <summary>
+        /// Name des Tischs
+        /// </summary>
+        protected readonly Table _table;
+
+        /// <summary>
+        /// Name des Spielers
+        /// </summary>
+        protected readonly IPlayer _player;
+        #endregion
+
+        #region properties
+        /// <summary>
+        /// Überprüft, ob das Spiel komplett zu Ende ist
+        /// </summary>
+        protected bool IsOver
+        {
+            get
+            {
+                if (_player.GetHandStatus() == HandStatus.Bust || _player.GetSecondHandStatus() == HandStatus.Bust || _table.Dealer.GetHandStatus() == HandStatus.Bust || _player.GetHandStatus() == HandStatus.TripleSeven || (_player.HasFinished && _table.Dealer.HasFinished))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Spieler wird ausgegeben
+        /// </summary>
+        public IPlayer Player
+        {
+            get
+            {
+                return _player;
+            }
+        }
+
+        /// <summary>
+        /// Dealer des Spiels wird ausgegeben
+        /// </summary>
+        public IPlayer Dealer
+        {
+            get
+            {
+                return _table.Dealer;
+            }
+        }
+        #endregion
+
+        #region events
+        public event EventHandler GameStarted;
+
+        public event EventHandler<PlayerEventArgs> PlayerActionPerformed;
+
+        public event EventHandler DealerActionPerformed;
+
+        public event EventHandler GameFinished;
+
+        public event EventHandler GameClosed;
+        #endregion
+
+        #region constructor
+        /// <summary>
+        /// Tisch und Spieler werden mit den passenden Werten befüllt
+        /// </summary>
+        /// <param name="table">Name des Tischs</param>
+        /// <param name="player">Name des Spielers</param>
+        internal Game(Table table, IPlayer player)
+        {
+            _table = table;
+            _player = player;
+        }
+        #endregion
+
+        #region methods
+        /// <summary>
+        /// Das Spiel wird gestartet (Spieler und Dealer bekommen jeweils zwei Karten)
+        /// </summary>
+        public void StartGame()
+        {
+            _player.PlayAction(PlayerAction.ThrowHand, false);
+            _table.Dealer.PlayAction(PlayerAction.ThrowHand, false);
+
+            for (int i = 0; i < 2; i++)
+            {
+                _player.PlayAction(PlayerAction.Hit, false);
+                _table.Dealer.PlayAction(PlayerAction.Hit, false);
+            }
+
+            if (_player.GetHandStatus() == HandStatus.BlackJack)
+            {
+                Play(PlayerAction.Stand, false);
+            }
+            else
+            {
+                OnGameStarted();
+            }
+        }
+
+        /// <summary>
+        /// Nächste Aktion wird von der Strategie bestimmt
+        /// </summary>
+        public void Play() 
+        {
+            _player.PlayAction(_table.Dealer.FirstCard);
+            OnPlayerActionPerformed(_player);
+        }
+
+        /// <summary>
+        /// Das Spiel geht weiter, nachdem der Spieler eine Aktion auswählt
+        /// </summary>
+        /// <param name="action">Aktion des Spielers</param>
+        public void Play(PlayerAction action, bool secondHand)
+        {
+            _player.PlayAction(action, secondHand);
+            OnPlayerActionPerformed(_player);
+        }
+
+        /// <summary>
+        /// Das Spiel wird bis zum Ende gespielt
+        /// </summary>
+        public void PlayGameToEnd()
+        {
+            if (!IsOver)
+            {
+                while (!_table.Dealer.HasFinished)
+                {
+                    _table.Dealer.PlayAction(_table.Dealer.FirstCard);
+                    OnDealerActionPerformed();
+                }
+            }
+
+            OnGameFinished();
+            OnGameClosed();
+        }
+
+        /// <summary>
+        /// Es wird ausgegeben, welcher Teilnehmer das Spiel gewonnen hat
+        /// </summary>
+        /// <returns>Liefert den richtigen Gewinner des Spiels zurück</returns>
+        public GameWinner GetWinner()
+        {
+            if ((_player.GetHandValue() > _table.Dealer.GetHandValue() && _player.GetHandValue() <= 21) || _table.Dealer.GetHandStatus() == HandStatus.Bust)
+            {
+                return GameWinner.Player;
+            }
+            else if (_player.GetHandValue() < _table.Dealer.GetHandValue() || _player.GetHandStatus() == HandStatus.Bust)
+            {
+                return GameWinner.Dealer;
+            }
+            else
+            {
+                return GameWinner.None;
+            }
+        }
+
+        /// <summary>
+        /// Gewinnrate des Spielers
+        /// </summary>
+        /// <returns>Liefert die Gewinnrate des Spielers zurück</returns>
+        public double GetWinRatio()
+        {
+            if (GetWinner() == GameWinner.Player)
+            {
+                if (_player.GetHandStatus() == HandStatus.TripleSeven)
+                {
+                    return 1.5;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+            else if (GetWinner() == GameWinner.Dealer)
+            {
+                return -1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// Es wird ausgegeben, welcher Teilnehmer das Spiel gewonnen hat
+        /// </summary>
+        /// <returns>Liefert den richtigen Gewinner des Spiels zurück</returns>
+        public GameWinner GetSecondHandWinner()
+        {
+            if ((_player.GetSecondHandValue() > _table.Dealer.GetHandValue() && _player.GetSecondHandValue() <= 21) || _table.Dealer.GetHandStatus() == HandStatus.Bust)
+            {
+                return GameWinner.Player;
+            }
+            else if (_player.GetSecondHandValue() < _table.Dealer.GetHandValue() || _player.GetSecondHandStatus() == HandStatus.Bust)
+            {
+                return GameWinner.Dealer;
+            }
+            else
+            {
+                return GameWinner.None;
+            }
+        }
+
+        /// <summary>
+        /// Gewinnrate des Spielers (zweite Hand)
+        /// </summary>
+        /// <returns>Liefert die Gewinnrate des Spielers für die zweite Hand zurück</returns>
+        public double GetSecondHandWinRatio()
+        {
+            if (GetSecondHandWinner() == GameWinner.Player)
+            {
+                if (_player.GetHandStatus() == HandStatus.TripleSeven)
+                {
+                    return 1.5;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+            else if (GetSecondHandWinner() == GameWinner.Dealer)
+            {
+                return -1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// Informationen über das Spiel und die Gewinner werden ausgegeben
+        /// </summary>
+        /// <returns>Liefert Infos über den Ablauf des Spiels zurück</returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Spiel zwischen {_player.GetName()} und {_table.Dealer.GetName()} auf dem Tisch {_table.Name}");
+            sb.AppendLine(_player.ToString());
+            sb.AppendLine(_table.Dealer.ToString(!_player.HasFinished));
+
+            if (IsOver)
+            {
+                sb.AppendLine();
+                switch (GetWinner())
+                {
+                    case GameWinner.Player:
+                        sb.AppendLine("GRATULATION! Sie haben das SPIEL gewonnen.");
+                        break;
+                    case GameWinner.Dealer:
+                        sb.AppendLine("DEALER hat gewonnen. PECH gehabt.");
+                        break;
+                    default:
+                        sb.AppendLine("PUSH - Unentschieden");
+                        break;
+                }
+            }
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Ausgabe der Konsole, wenn das Spiel startet
+        /// </summary>
+        protected virtual void OnGameStarted()
+        {
+            GameStarted?.Invoke(this, EventArgs.Empty);
+        }
+
+        /// <summary>
+        /// Ausgabe der Konsole, wenn das Spiel zu Ende ist
+        /// </summary>
+        protected virtual void OnGameFinished()
+        {
+            GameFinished?.Invoke(this, EventArgs.Empty);
+        }
+
+        /// <summary>
+        /// Ausgabe der Konsole, wenn das Spiel vorbei ist und der Gewinner ermittelt wird
+        /// </summary>
+        protected virtual void OnGameClosed()
+        {
+            GameClosed?.Invoke(this, EventArgs.Empty);
+        }
+
+        /// <summary>
+        /// Ausgabe der Konsole, nachdem der Dealer eine Aktion ausgeführt hat (Hit oder Stand)
+        /// </summary>
+        protected virtual void OnDealerActionPerformed()
+        {
+            DealerActionPerformed?.Invoke(this, EventArgs.Empty);
+        }
+
+        /// <summary>
+        /// Ausgabe der Konsole, nachdem der Spieler eine Aktion ausgeführt hat (Hit oder Stand)
+        /// </summary>
+        protected virtual void OnPlayerActionPerformed(IPlayer player)
+        {
+            PlayerActionPerformed?.Invoke(this, new PlayerEventArgs(player));
+        }
+        #endregion
+    }
+}

@@ -1,0 +1,987 @@
+﻿using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using NAudio.Wave;
+using BlackJack2022_3AHITN.Lib;
+using System.Windows.Media.Animation;
+using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+
+namespace BlackJack2022_3AHITN.WPF
+{
+    public partial class GameDesigner : Window
+    {
+        #region instancevariables
+        BlackJackGame _blackJackGame;
+        WaveOut _casinoAudio = new WaveOut();
+        Mp3FileReader fileReader = new Mp3FileReader(@"..\..\..\..\casino audio.mp3");
+        WaveOut _win = new WaveOut();
+        WaveOut _lose = new WaveOut();
+        PlayerFactory _playerFactory = new PlayerFactory();
+        GameFactory _gameFactory = new GameFactory();
+        IPlayerStrategy _playerStrategy = new PlayerStrategyHardHands();
+        Player _player;
+        Hand _hand = new Hand();
+        Hand _playerHand = new Hand();
+        Hand _dealerHand = new Hand();
+        IGame _game;
+        Card _firstCard;
+        List<Card> _playerCards = new List<Card>();
+        List<Card> _splittedCards = new List<Card>();
+        int _countStandClick = 0;
+        #endregion
+
+        #region property
+        /// <summary>
+        /// Spieler wird zurückgeliefert
+        /// </summary>
+        internal Player Player
+        {
+            get
+            {
+                return _player;
+            }
+        }
+        #endregion
+
+        #region constructors
+        public GameDesigner()
+        {
+            InitializeComponent();
+        }
+
+        public GameDesigner(BlackJackGame blackJackGame)
+        {
+            _blackJackGame = blackJackGame;
+            InitializeComponent();
+            InitializeData();
+        }
+        #endregion
+
+        #region methods
+        private void InitializeData()
+        {
+            //Es wird überprüft, welche Strategie vom Spieler ausgewählt wurde
+            if (_blackJackGame.Strategy == "Hard hands")
+            {
+                _playerStrategy = new PlayerStrategyHardHands();
+            }
+            else if (_blackJackGame.Strategy == "Soft hands")
+            {
+                _playerStrategy = new PlayerStrategySoftHands();
+            }
+
+            //Instanzvariablen werden initialisiert
+            if (!File.Exists($"{_blackJackGame.PlayerName}.json"))
+            {
+                _player = (Player)_playerFactory.CreatePlayer(_blackJackGame.PlayerName, _blackJackGame.Table, _playerStrategy);
+            }
+            else
+            {
+                //Liest das Guthaben des Spielers von der Datei ab
+                using (Stream stream = new FileStream($"{_blackJackGame.PlayerName}.json", FileMode.Open, FileAccess.Read))
+                {
+                    _player = Player.ReadJson(stream);
+                    _player.CardSource = new SevenCardSource();
+                    _player.SetPlayerStrategy(_playerStrategy);
+                    stream.Close();
+                }
+            }
+
+            _game = _gameFactory.CreateGame(_blackJackGame.Table, _player);
+
+            //Felder werden mit passenden Werten befüllt
+            lblPlayer.Content = _blackJackGame.PlayerName;
+            tbxTableName.Text = _blackJackGame.Table.Name;
+            tbxStrategy.Text = _blackJackGame.Strategy;
+
+            //Audio im Casino wird im Hintergrund abgespielt
+            _casinoAudio.Init(fileReader);
+            _casinoAudio.Play();
+
+            //Spiel wird gestartet...
+            _game.StartGame();
+
+            //Spieler macht seine Wette
+            _player.Bet(_blackJackGame.PlayerBet);
+
+            tbxPlayerBet.Text = _blackJackGame.PlayerBet + " €";
+            tblPlayerBalance.Text = "Budget: " + _player.Balance;
+
+            //Karten des Spielers werden angezeigt
+            _playerCards = _game.Player.Cards.ToList();
+            foreach (Card card in _playerCards)
+            {
+                Image cardImage = CreateCardImage(card, 40 * grdPlayerCards.Children.Count);
+                grdPlayerCards.Children.Add(cardImage);
+
+                if (_game.Player.GetHandStatus() != HandStatus.BlackJack && card.Value == CardValue.Ace)
+                {
+                    int playerCardValue = _game.Player.GetHandValue();
+                    tbxPlayerPoints.Text = $"{playerCardValue - 10}/{playerCardValue}";
+                    tbxPlayerPoints.FontSize = 55;
+                    tbxPlayerPoints.Margin = new Thickness(74, 181, 80, 53);
+                }
+            }
+            _hand.AddCard(_playerCards.First());
+
+            //Status und Punkte des Spielers werden aktualisiert
+            lblPlayerStatus.Content = _game.Player.GetHandStatus().ToString();
+            if (tbxPlayerPoints.Text == "0")
+            {
+                tbxPlayerPoints.Text = _game.Player.GetHandValue().ToString();
+            }
+
+            //Erste Karte des Dealers wird angezeigt
+            _firstCard = _game.Dealer.FirstCard;
+            _dealerHand.AddCard(_firstCard);
+            grdDealerCards.Children.Add(CreateCardImage(_firstCard, 40 * grdDealerCards.Children.Count));
+
+            //Zweite Karte des Dealers ist zuerst unsichtbar
+            grdDealerCards.Children.Add(CreateCardImage(_firstCard, 40 * grdDealerCards.Children.Count, $"Resources/cards/Card-Skin-Red.png"));
+
+            //Punkte der ersten Karte des Dealers wird angezeigt
+            if (_firstCard.Value == CardValue.Ace)
+            {
+                tbxDealerPoints.Text = $"{_dealerHand.Sum - 10}/{_dealerHand.Sum}";
+                tbxDealerPoints.FontSize = 55;
+                tbxDealerPoints.Margin = new Thickness(74, 181, 80, 53);
+            }
+            else
+            {
+                tbxDealerPoints.Text = _dealerHand.Sum.ToString();
+            }
+
+            //Wenn der Spieler schon am Anfang des Spiels den Status BlackJack hat, dann kann er nicht mehr eine Karte ziehen
+            if (_game.Player.GetHandStatus() == HandStatus.BlackJack)
+            {
+                btnAutoAction.IsEnabled = false;
+                btnHit.IsEnabled = false;
+                btnDouble.IsEnabled = false;
+            }
+
+            if (_hand.Sum != (_player.GetHandValue() - _hand.Sum))
+            {
+                btnSplit.IsEnabled = false;
+            }
+        }
+
+        private void btnAutoAction_Click(object sender, RoutedEventArgs e)
+        {
+            //Automatische Aktion wird ausgeführt
+            _game.Play();
+
+            //Karten des Spielers werden aktualisiert
+            List<Card> cards = _game.Player.Cards.ToList();
+            if (cards.Count > grdPlayerCards.Children.Count)
+            {
+                Image cardImage = CreateCardImage(cards[cards.Count - 1], 40 * grdPlayerCards.Children.Count);
+                grdPlayerCards.Children.Add(cardImage);
+            }
+
+            //Es wird überprüft, ob der Spieler die Karte Ass in seiner Hand einmal hat
+            if (_game.Player.NumberOfAceCards == 1)
+            {
+                foreach (Card card in cards)
+                {
+                    if (card.Value != CardValue.Ace)
+                    {
+                        _playerHand.AddCard(card);
+                    }
+                }
+            }
+
+            //Status und Punkte des Spielers werden aktualisiert
+            lblPlayerStatus.Content = _game.Player.GetHandStatus().ToString();
+
+            if (_playerHand.Sum > 0 && _playerHand.Sum <= 9)
+            {
+                tbxPlayerPoints.Text = $"{_game.Player.GetHandValue() - 10}/{_game.Player.GetHandValue()}";
+                tbxPlayerPoints.FontSize = 55;
+                tbxPlayerPoints.Margin = new Thickness(74, 181, 80, 53);
+            }
+            else
+            {
+                tbxPlayerPoints.Text = _game.Player.GetHandValue().ToString();
+                tbxPlayerPoints.FontSize = 75;
+                tbxPlayerPoints.Margin = new Thickness(74, 158, 80, 53);
+            }
+
+            //Wenn der Spieler den Wert 21 hat, dann kann er nicht mehr Karten ziehen oder automatische Aktion ausführen
+            if (_game.Player.GetHandValue() == 21)
+            {
+                btnAutoAction.IsEnabled = false;
+                btnHit.IsEnabled = false;
+                btnDouble.IsEnabled = false;
+                btnSplit.IsEnabled = false;
+            }
+
+            //Wenn die Anzahl der Karten weniger oder mehr als 2 ist, dann kann der Spieler nicht mehr verdoppeln
+            if (grdPlayerCards.Children.Count == 2)
+            {
+                btnDouble.IsEnabled = true;
+            }
+            else
+            {
+                btnDouble.IsEnabled = false;
+            }
+
+            if (_game.Player.HasFinished)
+            {
+                btnStand_Click(sender, e);
+            }
+
+            btnSplit.IsEnabled = false;
+        }
+
+        private void btnHit_Click(object sender, RoutedEventArgs e)
+        {
+            if (grdPlayerCards.Children.Count == _game.Player.Cards.ToList().Count && grdPlayerCards.Children.Count != _game.Player.SecondHandCards.ToList().Count)
+            {
+                //Aktion des Spielers wird ausgeführt
+                _game.Play(PlayerAction.Hit, false);
+
+                //Karten des Spielers werden aktualisiert
+                List<Card> cards = _game.Player.Cards.ToList();
+                Image cardImage = CreateCardImage(cards[cards.Count - 1], 40 * grdPlayerCards.Children.Count);
+                grdPlayerCards.Children.Add(cardImage);
+
+                //Es wird überprüft, ob der Spieler die Karte Ass in seiner Hand einmal hat
+                if (_game.Player.NumberOfAceCards == 1)
+                {
+                    foreach (Card card in cards)
+                    {
+                        if (card.Value != CardValue.Ace)
+                        {
+                            _playerHand.AddCard(card);
+                        }
+                    }
+                }
+
+                //Status und Punkte des Spielers werden aktualisiert
+                lblPlayerStatus.Content = _game.Player.GetHandStatus().ToString();
+
+                if (_playerHand.Sum > 0 && _playerHand.Sum <= 9)
+                {
+                    tbxPlayerPoints.Text = $"{_game.Player.GetHandValue() - 10}/{_game.Player.GetHandValue()}";
+                    tbxPlayerPoints.FontSize = 55;
+                    tbxPlayerPoints.Margin = new Thickness(74, 181, 80, 53);
+                }
+                else
+                {
+                    tbxPlayerPoints.Text = _game.Player.GetHandValue().ToString();
+                    tbxPlayerPoints.FontSize = 75;
+                    tbxPlayerPoints.Margin = new Thickness(74, 158, 80, 53);
+                }
+
+                //Wenn der Spieler den Wert 21 hat, dann kann er nicht mehr Karten ziehen oder automatische Aktion ausführen
+                if (_game.Player.GetHandValue() == 21)
+                {
+                    btnAutoAction.IsEnabled = false;
+                    btnHit.IsEnabled = false;
+                    btnDouble.IsEnabled = false;
+                    btnSplit.IsEnabled = false;
+                }
+
+                //Wenn die Anzahl der Karten weniger oder mehr als 2 ist, dann kann der Spieler nicht mehr verdoppeln
+                if (grdPlayerCards.Children.Count == 2)
+                {
+                    btnDouble.IsEnabled = true;
+                }
+                else
+                {
+                    btnDouble.IsEnabled = false;
+                }
+
+                //Wenn der Spieler den Status Bust hat, dann ist das Spiel zu Ende (ohne dass der Dealer Karten ziehen muss)
+                if (_game.Player.HasFinished)
+                {
+                    btnStand_Click(sender, e);
+                }
+            }
+            else
+            {
+                //Wenn der Spieler auf Hit klickt, dann wird diese Aktion ausgeführt
+                _game.Play(PlayerAction.Hit, true);
+
+                //Karten des Spielers werden aktualisiert
+                List<Card> cards = _game.Player.SecondHandCards.ToList();
+                Image cardImage = CreateCardImage(cards[cards.Count - 1], 40 * grdPlayerCards.Children.Count);
+                grdPlayerCards.Children.Add(cardImage);
+
+                //Es wird überprüft, ob der Spieler die Karte Ass in seiner Hand einmal hat
+                if (_game.Player.NumberOfAceCards == 1)
+                {
+                    foreach (Card card in cards)
+                    {
+                        if (card.Value != CardValue.Ace)
+                        {
+                            _playerHand.AddCard(card);
+                        }
+                    }
+                }
+
+                //Status und Punkte des Spielers werden aktualisiert
+                lblPlayerStatus.Content = _game.Player.GetSecondHandStatus().ToString();
+
+                if (_playerHand.Sum > 0 && _playerHand.Sum <= 9)
+                {
+                    tbxPlayerPoints.Text = $"{_game.Player.GetSecondHandValue() - 10}/{_game.Player.GetSecondHandValue()}";
+                    tbxPlayerPoints.FontSize = 55;
+                    tbxPlayerPoints.Margin = new Thickness(74, 181, 80, 53);
+                }
+                else
+                {
+                    tbxPlayerPoints.Text = _game.Player.GetSecondHandValue().ToString();
+                    tbxPlayerPoints.FontSize = 75;
+                    tbxPlayerPoints.Margin = new Thickness(74, 158, 80, 53);
+                }
+
+                //Wenn der Spieler den Wert 21 hat, dann kann er nicht mehr Karten ziehen oder automatische Aktion ausführen
+                if (_game.Player.GetSecondHandValue() == 21)
+                {
+                    btnAutoAction.IsEnabled = false;
+                    btnHit.IsEnabled = false;
+                    btnDouble.IsEnabled = false;
+                    btnSplit.IsEnabled = false;
+                }
+
+                //Wenn die Anzahl der Karten weniger oder mehr als 2 ist, dann kann der Spieler nicht mehr verdoppeln
+                if (grdPlayerCards.Children.Count == 2)
+                {
+                    btnDouble.IsEnabled = true;
+                }
+                else
+                {
+                    btnDouble.IsEnabled = false;
+                }
+
+                //Wenn der Spieler den Status Bust hat, dann ist das Spiel zu Ende (ohne dass der Dealer Karten ziehen muss)
+                if (_game.Player.GetSecondHandStatus() == HandStatus.Bust)
+                {
+                    btnStand_Click(sender, e);
+                }
+            }
+
+            btnSplit.IsEnabled = false;
+        }
+
+        private async void btnStand_Click(object sender, RoutedEventArgs e)
+        {
+            if (_game.Player.SecondHandCards.ToList().Count > 0 && _countStandClick == 0)
+            {
+                _playerCards = _game.Player.Cards.ToList();
+                _splittedCards = _game.Player.SecondHandCards.ToList();
+
+                grdPlayerCards.Children.Clear();
+                grdPlayerSecondHandCards.Children.Clear();
+
+                for (int i = 0; i < _splittedCards.Count; i++)
+                {
+                    Image allSecondHandCards = CreateCardImage(_splittedCards[i], 40 * grdPlayerCards.Children.Count);
+                    grdPlayerCards.Children.Add(allSecondHandCards);
+                }
+
+                for (int i = 0; i < _playerCards.Count; i++)
+                {
+                    Image allFirstHandCards = CreateCardImage(_playerCards[i], 40 * grdPlayerSecondHandCards.Children.Count);
+                    grdPlayerSecondHandCards.Children.Add(allFirstHandCards);
+                }
+
+                //Status und Punkte des Spielers werden aktualisiert
+                lblPlayerStatus.Content = _game.Player.GetSecondHandStatus().ToString();
+                tbxPlayerPoints.Text = _game.Player.GetSecondHandValue().ToString();
+
+                btnAutoAction.IsEnabled = false;
+                btnHit.IsEnabled = true;
+                btnDouble.IsEnabled = false;
+
+                _countStandClick++;
+            }
+            else
+            {
+                if (_game.Player.SecondHandCards.ToList().Count > 0 && _countStandClick > 0)
+                {
+                    //Spieler kann nicht mehr Karten ziehen oder das Spiel beenden
+                    btnAutoAction.Visibility = Visibility.Hidden;
+                    btnHit.Visibility = Visibility.Hidden;
+                    btnStand.Visibility = Visibility.Hidden;
+                    btnDouble.Visibility = Visibility.Hidden;
+                    btnSplit.Visibility = Visibility.Hidden;
+
+                    //Audio im Hintergrund wird pausiert, da das Spiel bereits zu Ende ist
+                    _casinoAudio.Pause();
+
+                    //Wenn der Spieler weder den Status BlackJack, noch Bust hat, dann wird die Aktion Stand ausgeführt
+                    if (_game.Player.GetSecondHandStatus() != HandStatus.BlackJack && _game.Player.GetSecondHandStatus() != HandStatus.Bust)
+                    {
+                        _game.Play(PlayerAction.Stand, true);
+                    }
+
+                    _game.PlayGameToEnd();
+
+                    //Alle Karten des Dealers werden angezeigt
+                    grdDealerCards.Children.RemoveAt(1);
+
+                    List<Card> cards = _game.Dealer.Cards.ToList();
+                    for (int i = 1; i < cards.Count; i++)
+                    {
+                        Image cardImage = CreateCardImage(cards[i], 40 * grdDealerCards.Children.Count);
+                        grdDealerCards.Children.Add(cardImage);
+                    }
+
+                    //Status und Punkte des Dealers werden aktualisiert
+                    if (_game.Dealer.GetHandStatus() == HandStatus.TripleSeven)
+                    {
+                        lblDealerStatus.Content = "Normal";
+                    }
+                    else
+                    {
+                        lblDealerStatus.Content = _game.Dealer.GetHandStatus().ToString();
+                    }
+
+                    tbxDealerPoints.Text = _game.Dealer.GetHandValue().ToString();
+                    tbxDealerPoints.FontSize = 75;
+                    tbxDealerPoints.Margin = new Thickness(74, 158, 80, 53);
+
+                    //Überprüfungen werden durchgeführt, damit man weiß, wer das Spiel gewonnen hat
+                    if (_game.GetSecondHandWinner() == GameWinner.Player)
+                    {
+                        if (_game.Player.GetSecondHandStatus() == HandStatus.BlackJack)
+                        {
+                            imgBlackJack.Visibility = Visibility.Visible;
+                            await Task.Delay(1500);
+                            imgBlackJack.Visibility = Visibility.Hidden;
+                        }
+
+                        //Es wird gezeigt, dass der Spieler gewonnen hat
+                        lblPlayerWins.Visibility = Visibility.Visible;
+
+                        //Wenn der Spieler gewinnt, dann wird ihm diese Information mithilfe von einem Audio mitgeteilt
+                        Mp3FileReader fileReader = new Mp3FileReader(@"..\..\..\..\playerWin.mp3");
+                        _win.Init(fileReader);
+                        _win.Play();
+
+                        //Wenn der Spieler gewinnt, dann wird sein Guthaben mehr
+                        _player.Payout(_game.GetSecondHandWinRatio());
+
+                        await Task.Delay(5500);
+
+                        lblPlayerWins.Visibility = Visibility.Hidden;
+                    }
+                    else if (_game.GetSecondHandWinner() == GameWinner.Dealer)
+                    {
+                        //Wenn der Spieler den Status Bust hat, dann wird ihm gezeigt, dass er schon verloren hat
+                        if (_game.Player.GetSecondHandStatus() == HandStatus.Bust)
+                        {
+                            imgBusted.Visibility = Visibility.Visible;
+                            await Task.Delay(1500);
+                            imgBusted.Visibility = Visibility.Hidden;
+                        }
+
+                        //Es wird gezeigt, dass der Dealer gewonnen hat
+                        lblDealerWins.Visibility = Visibility.Visible;
+
+                        //Wenn der Spieler verliert, dann wird ihm diese Information mithilfe von einem Audio mitgeteilt
+                        Mp3FileReader fileReader = new Mp3FileReader(@"..\..\..\..\playerLose.mp3");
+                        _lose.Init(fileReader);
+                        _lose.Play();
+
+                        //Wenn der Spieler verliert, dann wird sein Guthaben geringer
+                        _player.Payout(_game.GetSecondHandWinRatio());
+
+                        await Task.Delay(5000);
+
+                        lblDealerWins.Visibility = Visibility.Hidden;
+                    }
+                    else
+                    {
+                        //Wenn es unentschieden ist, dann wird auch diese Information dem Spieler mitgeteilt
+                        lblNobodyWins.Visibility = Visibility.Visible;
+
+                        _player.Payout(_game.GetSecondHandWinRatio());
+
+                        await Task.Delay(2000);
+
+                        lblNobodyWins.Visibility = Visibility.Hidden;
+                    }
+
+                    _player.Bet(_blackJackGame.PlayerBet / 2);
+
+                    grdPlayerCards.Children.Clear();
+                    grdPlayerSecondHandCards.Children.Clear();
+
+                    lblSecondHand.Visibility = Visibility.Hidden;
+
+                    for (int i = 0; i < _playerCards.Count; i++)
+                    {
+                        Image card = CreateCardImage(_playerCards[i], 40 * grdPlayerCards.Children.Count);
+                        grdPlayerCards.Children.Add(card);
+                    }
+
+                    //Status und Punkte des Spielers werden aktualisiert
+                    lblPlayerStatus.Content = _game.Player.GetHandStatus().ToString();
+                    tbxPlayerPoints.Text = _game.Player.GetHandValue().ToString();
+                    tbxPlayerPoints.FontSize = 75;
+                    tbxPlayerPoints.Margin = new Thickness(74, 158, 80, 53);
+
+                    //Wenn der Spieler weder den Status BlackJack, noch Bust hat, dann wird die Aktion Stand ausgeführt
+                    if (_game.Player.GetHandStatus() != HandStatus.BlackJack && _game.Player.GetHandStatus() != HandStatus.Bust)
+                    {
+                        _game.Play(PlayerAction.Stand, false);
+                    }
+
+                    _game.PlayGameToEnd();
+
+                    //Überprüfungen werden durchgeführt, damit man weiß, wer das Spiel gewonnen hat
+                    if (_game.GetWinner() == GameWinner.Player)
+                    {
+                        if (_game.Player.GetHandStatus() == HandStatus.BlackJack)
+                        {
+                            imgBlackJack.Visibility = Visibility.Visible;
+                            await Task.Delay(1500);
+                            imgBlackJack.Visibility = Visibility.Hidden;
+                        }
+
+                        //Es wird gezeigt, dass der Spieler gewonnen hat
+                        lblPlayerWins.Visibility = Visibility.Visible;
+
+                        //Wenn der Spieler gewinnt, dann wird ihm diese Information mithilfe von einem Audio mitgeteilt
+                        Mp3FileReader fileReader = new Mp3FileReader(@"..\..\..\..\playerWin.mp3");
+                        _win.Init(fileReader);
+                        _win.Play();
+
+                        //Wenn der Spieler gewinnt, dann wird sein Guthaben mehr
+                        _player.Payout(_game.GetWinRatio());
+
+                        await Task.Delay(5500);
+
+                        lblPlayerWins.Visibility = Visibility.Hidden;
+                    }
+                    else if (_game.GetWinner() == GameWinner.Dealer)
+                    {
+                        //Wenn der Spieler den Status Bust hat, dann wird ihm gezeigt, dass er schon verloren hat
+                        if (_game.Player.GetHandStatus() == HandStatus.Bust)
+                        {
+                            imgBusted.Visibility = Visibility.Visible;
+                            await Task.Delay(1500);
+                            imgBusted.Visibility = Visibility.Hidden;
+                        }
+
+                        //Es wird gezeigt, dass der Dealer gewonnen hat
+                        lblDealerWins.Visibility = Visibility.Visible;
+
+                        //Wenn der Spieler verliert, dann wird ihm diese Information mithilfe von einem Audio mitgeteilt
+                        Mp3FileReader fileReader = new Mp3FileReader(@"..\..\..\..\playerLose.mp3");
+                        _lose.Init(fileReader);
+                        _lose.Play();
+
+                        //Wenn der Spieler verliert, dann wird sein Guthaben geringer
+                        _player.Payout(_game.GetWinRatio());
+
+                        await Task.Delay(5000);
+
+                        lblDealerWins.Visibility = Visibility.Hidden;
+                    }
+                    else
+                    {
+                        //Wenn es unentschieden ist, dann wird auch diese Information dem Spieler mitgeteilt
+                        lblNobodyWins.Visibility = Visibility.Visible;
+
+                        _player.Payout(_game.GetWinRatio());
+
+                        await Task.Delay(2000);
+
+                        lblNobodyWins.Visibility = Visibility.Hidden;
+                    }
+                }
+                else
+                {
+                    //Spieler kann nicht mehr Karten ziehen oder das Spiel beenden
+                    btnAutoAction.Visibility = Visibility.Hidden;
+                    btnHit.Visibility = Visibility.Hidden;
+                    btnStand.Visibility = Visibility.Hidden;
+                    btnDouble.Visibility = Visibility.Hidden;
+                    btnSplit.Visibility = Visibility.Hidden;
+
+                    //Audio im Hintergrund wird pausiert, da das Spiel bereits zu Ende ist
+                    _casinoAudio.Pause();
+
+                    //Wenn der Spieler weder den Status BlackJack, noch Bust hat, dann wird die Aktion Stand ausgeführt
+                    if (_game.Player.GetHandStatus() != HandStatus.BlackJack && _game.Player.GetHandStatus() != HandStatus.Bust)
+                    {
+                        _game.Play(PlayerAction.Stand, false);
+                    }
+
+                    _game.PlayGameToEnd();
+
+                    //Karten des Dealers werden angezeigt
+                    grdDealerCards.Children.RemoveAt(1);
+
+                    List<Card> cards = _game.Dealer.Cards.ToList();
+                    for (int i = 1; i < cards.Count; i++)
+                    {
+                        Image cardImage = CreateCardImage(cards[i], 40 * grdDealerCards.Children.Count);
+                        grdDealerCards.Children.Add(cardImage);
+                    }
+
+                    //Punkte des Spielers wird aktualisiert
+                    tbxPlayerPoints.Text = _game.Player.GetHandValue().ToString();
+                    tbxPlayerPoints.FontSize = 75;
+                    tbxPlayerPoints.Margin = new Thickness(74, 158, 80, 53);
+
+                    //Status und Punkte des Dealers werden aktualisiert
+                    if (_game.Dealer.GetHandStatus() == HandStatus.TripleSeven)
+                    {
+                        lblDealerStatus.Content = "Normal";
+                    }
+                    else
+                    {
+                        lblDealerStatus.Content = _game.Dealer.GetHandStatus().ToString();
+                    }
+
+                    tbxDealerPoints.Text = _game.Dealer.GetHandValue().ToString();
+                    tbxDealerPoints.FontSize = 75;
+                    tbxDealerPoints.Margin = new Thickness(74, 158, 80, 53);
+
+                    //Überprüfungen werden durchgeführt, damit man weiß, wer das Spiel gewonnen hat
+                    if (_game.GetWinner() == GameWinner.Player)
+                    {
+                        if (_game.Player.GetHandStatus() == HandStatus.BlackJack)
+                        {
+                            imgBlackJack.Visibility = Visibility.Visible;
+                            await Task.Delay(1500);
+                            imgBlackJack.Visibility = Visibility.Hidden;
+                        }
+
+                        //Es wird gezeigt, dass der Spieler gewonnen hat
+                        lblPlayerWins.Visibility = Visibility.Visible;
+
+                        //Wenn der Spieler gewinnt, dann wird ihm diese Information mithilfe von einem Audio mitgeteilt
+                        Mp3FileReader fileReader = new Mp3FileReader(@"..\..\..\..\playerWin.mp3");
+                        _win.Init(fileReader);
+                        _win.Play();
+
+                        //Wenn der Spieler gewinnt, dann wird sein Guthaben mehr
+                        _player.Payout(_game.GetWinRatio());
+
+                        await Task.Delay(5500);
+
+                        lblPlayerWins.Visibility = Visibility.Hidden;
+                    }
+                    else if (_game.GetWinner() == GameWinner.Dealer)
+                    {
+                        //Wenn der Spieler den Status Bust hat, dann wird ihm gezeigt, dass er schon verloren hat
+                        if (_game.Player.GetHandStatus() == HandStatus.Bust)
+                        {
+                            imgBusted.Visibility = Visibility.Visible;
+                            await Task.Delay(1500);
+                            imgBusted.Visibility = Visibility.Hidden;
+                        }
+
+                        //Es wird gezeigt, dass der Dealer gewonnen hat
+                        lblDealerWins.Visibility = Visibility.Visible;
+
+                        //Wenn der Spieler verliert, dann wird ihm diese Information mithilfe von einem Audio mitgeteilt
+                        Mp3FileReader fileReader = new Mp3FileReader(@"..\..\..\..\playerLose.mp3");
+                        _lose.Init(fileReader);
+                        _lose.Play();
+
+                        //Wenn der Spieler verliert, dann wird sein Guthaben geringer
+                        _player.Payout(_game.GetWinRatio());
+
+                        await Task.Delay(5000);
+
+                        lblDealerWins.Visibility = Visibility.Hidden;
+                    }
+                    else
+                    {
+                        //Wenn es unentschieden ist, dann wird auch diese Information dem Spieler mitgeteilt
+                        lblNobodyWins.Visibility = Visibility.Visible;
+
+                        _player.Payout(_game.GetWinRatio());
+
+                        await Task.Delay(2000);
+
+                        lblNobodyWins.Visibility = Visibility.Hidden;
+                    }
+                }
+
+                //Spieler kann entweder ein neues Spiel starten oder die Seite schließen
+                btnNewGame.Visibility = Visibility.Visible;
+                btnExit.Visibility = Visibility.Visible;
+
+                if (_player.Balance < _blackJackGame.PlayerBet)
+                {
+                    btnNewGame.IsEnabled = false;
+                }
+
+                //Spieler und Dealer haben keine Punkte mehr
+                tbxPlayerPoints.Text = "0";
+                tbxDealerPoints.Text = "0";
+
+                //Karten des Spielers und Dealers werden wieder zurückgesammelt
+                grdPlayerCards.Children.Clear();
+                grdDealerCards.Children.Clear();
+
+                //Status von Spieler und Dealer werden auf Normal gesetzt 
+                lblPlayerStatus.Content = "Normal";
+                lblDealerStatus.Content = "Normal";
+
+                //Aktuelles Guthaben des Spielers wird angezeigt
+                tbxPlayerBet.Text = _blackJackGame.PlayerBet + " €";
+                tblPlayerBalance.Text = "Budget: " + _player.Balance;
+
+                //Schreibt das Kapital des Spielers in eine Datei rein
+                using (Stream stream = new FileStream($"{_player.GetName()}.json", FileMode.Create, FileAccess.Write))
+                {
+                    _player.WriteJson(stream);
+                    stream.Close();
+                }
+            }
+        }
+
+        private void btnDouble_Click(object sender, RoutedEventArgs e)
+        {
+            //Wette des Spielers wird verdoppelt und angezeigt
+            int playerBet = Convert.ToInt32(tbxPlayerBet.Text.Split(' ')[0]);
+
+            _player.Bet(_blackJackGame.PlayerBet);
+
+            tbxPlayerBet.Text = playerBet * 2 + " €";
+            tblPlayerBalance.Text = "Budget: " + _player.Balance;
+
+            if (grdPlayerCards.Children.Count == _game.Player.Cards.ToList().Count && grdPlayerCards.Children.Count != _game.Player.SecondHandCards.ToList().Count)
+            {
+                //Wenn der Spieler auf Double klickt, dann wird diese Aktion ausgeführt
+                _game.Play(PlayerAction.Double, false);
+
+                //Karten des Spielers werden aktualisiert
+                List<Card> cards = _game.Player.Cards.ToList();
+                Image cardImage = CreateCardImage(cards[cards.Count - 1], 40 * grdPlayerCards.Children.Count);
+                grdPlayerCards.Children.Add(cardImage);
+
+                //Status und Punkte des Spielers werden aktualisiert
+                lblPlayerStatus.Content = _game.Player.GetHandStatus().ToString();
+                tbxPlayerPoints.Text = _game.Player.GetHandValue().ToString();
+            }
+            else
+            {
+                //Wenn der Spieler auf Double klickt, dann wird diese Aktion ausgeführt
+                _game.Play(PlayerAction.Double, true);
+
+                //Karten des Spielers werden aktualisiert
+                List<Card> cards = _game.Player.SecondHandCards.ToList();
+                Image cardImage = CreateCardImage(cards[cards.Count - 1], 40 * grdPlayerCards.Children.Count);
+                grdPlayerCards.Children.Add(cardImage);
+
+                //Status und Punkte des Spielers werden aktualisiert
+                lblPlayerStatus.Content = _game.Player.GetSecondHandStatus().ToString();
+                tbxPlayerPoints.Text = _game.Player.GetSecondHandValue().ToString();
+            }
+
+            btnStand_Click(sender, e);
+        }
+
+        private void btnSplit_Click(object sender, RoutedEventArgs e)
+        {
+            //Wenn der Spieler auf Split klickt, dann wird diese Aktion ausgeführt
+            _game.Play(PlayerAction.Split, true);
+
+            _game.Play(PlayerAction.Hit, false);
+
+            _player.Bet((_blackJackGame.PlayerBet / 2) * (-1));
+
+            lblSecondHand.Visibility = Visibility.Visible;
+
+            tbxPlayerBet.Text = _blackJackGame.PlayerBet / 2 + " €";
+
+            grdPlayerCards.Children.RemoveAt(1);
+
+            //Alle Karten und die Punkte des Spielers werden aktualisiert und angezeigt
+            List<Card> cards = _game.Player.Cards.ToList();
+            Image cardImage = CreateCardImage(cards[cards.Count - 1], 40 * grdPlayerCards.Children.Count);
+            grdPlayerCards.Children.Add(cardImage);
+
+            tbxPlayerPoints.Text = _game.Player.GetHandValue().ToString();
+
+            //Karte in der zweiten Hand des Spielers wird angezeigt
+            _splittedCards = _game.Player.SecondHandCards.ToList();
+            Image allCards = CreateCardImage(_splittedCards.First(), 40 * grdPlayerSecondHandCards.Children.Count);
+            grdPlayerSecondHandCards.Children.Add(allCards);
+
+            if (_game.Player.GetHandStatus() == HandStatus.BlackJack)
+            {
+                btnAutoAction.IsEnabled = false;
+                btnHit.IsEnabled = false;
+                btnDouble.IsEnabled = false;
+            }
+
+            btnSplit.IsEnabled = false;
+        }
+
+        private void btnNewGame_Click(object sender, RoutedEventArgs e)
+        {
+            //Neues Spiel kann nicht mehr gestartet werden
+            btnNewGame.Visibility = Visibility.Hidden;
+            btnExit.Visibility = Visibility.Hidden;
+
+            //Wenn der Spieler ein neues Spiel startet, dann kann er wieder Karten ziehen oder auf Stand drücken
+            btnAutoAction.Visibility = Visibility.Visible;
+            btnAutoAction.IsEnabled = true;
+            btnHit.Visibility = Visibility.Visible;
+            btnHit.IsEnabled = true;
+            btnStand.Visibility = Visibility.Visible;
+            btnDouble.Visibility = Visibility.Visible;
+            btnDouble.IsEnabled = true;
+            btnSplit.Visibility = Visibility.Visible;
+            btnSplit.IsEnabled = true;
+
+            //Audio wird weiter abgespielt
+            _casinoAudio.PlaybackStopped += (sender, eventArgs) =>
+            {
+                // Reset the position to the beginning when playback stops
+                if (fileReader.Position >= fileReader.Length)
+                {
+                    fileReader.Position = 0;
+                    _casinoAudio.Play();
+                }
+            };
+
+            _casinoAudio.Play();
+
+            //Anzahl der Klicke auf Stand-Button wird wieder auf 0 gesetzt
+            _countStandClick = 0;
+
+            //Hand der Spieler wird geleert
+            _hand.RemoveCards();
+            _playerHand.RemoveCards();
+            _dealerHand.RemoveCards();
+
+            //Spiel wird gestartet...
+            _game = _gameFactory.CreateGame(_blackJackGame.Table, _player);
+            _game.StartGame();
+
+            //Spieler macht seine Wette
+            _player.Bet(_blackJackGame.PlayerBet);
+
+            tblPlayerBalance.Text = "Budget: " + _player.Balance;
+
+            //Karten des Spielers werden angezeigt
+            List<Card> playerCards = _game.Player.Cards.ToList();
+            foreach (Card card in playerCards)
+            {
+                Image cardImage = CreateCardImage(card, 40 * grdPlayerCards.Children.Count);
+                grdPlayerCards.Children.Add(cardImage);
+
+                if (_game.Player.GetHandStatus() != HandStatus.BlackJack && card.Value == CardValue.Ace)
+                {
+                    int playerCardValue = _game.Player.GetHandValue();
+                    tbxPlayerPoints.Text = $"{playerCardValue - 10}/{playerCardValue}";
+                    tbxPlayerPoints.FontSize = 55;
+                    tbxPlayerPoints.Margin = new Thickness(74, 181, 80, 53);
+                }
+            }
+            _hand.AddCard(playerCards.First());
+
+            //Status und Punkte des Spielers werden aktualisiert
+            lblPlayerStatus.Content = _game.Player.GetHandStatus().ToString();
+            if (tbxPlayerPoints.Text == "0")
+            {
+                tbxPlayerPoints.Text = _game.Player.GetHandValue().ToString();
+            }
+
+            //Erste Karte des Dealers wird angezeigt
+            _firstCard = _game.Dealer.FirstCard;
+            _dealerHand.AddCard(_firstCard);
+            grdDealerCards.Children.Add(CreateCardImage(_firstCard, 40 * grdDealerCards.Children.Count));
+
+            //Zweite Karte des Dealers ist zuerst unsichtbar
+            grdDealerCards.Children.Add(CreateCardImage(_firstCard, 40 * grdDealerCards.Children.Count, $"Resources/cards/Card-Skin-Red.png"));
+
+            //Punkte der ersten Karte des Dealers wird angezeigt
+            if (_firstCard.Value == CardValue.Ace)
+            {
+                tbxDealerPoints.Text = $"{_dealerHand.Sum - 10}/{_dealerHand.Sum}";
+                tbxDealerPoints.FontSize = 55;
+                tbxDealerPoints.Margin = new Thickness(74, 181, 80, 53);
+            }
+            else
+            {
+                tbxDealerPoints.Text = _dealerHand.Sum.ToString();
+            }
+
+            //Wenn der Spieler schon am Anfang des Spiels den Status BlackJack hat, dann kann er nicht mehr eine Karte ziehen
+            if (_game.Player.GetHandStatus() == HandStatus.BlackJack)
+            {
+                btnAutoAction.IsEnabled = false;
+                btnHit.IsEnabled = false;
+                btnDouble.IsEnabled = false;
+            }
+
+            if (_hand.Sum != (_player.GetHandValue() - _hand.Sum))
+            {
+                btnSplit.IsEnabled = false;
+            }
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            _blackJackGame.Show();
+        }
+
+        /// <summary>
+        /// Erstellt Image von der Karte und liefert es zurück
+        /// </summary>
+        /// <param name="card">Karte</param>
+        /// <param name="offset">Abstand der Karten zueinander</param>
+        /// /// <param name="path">Pfad für die Karte</param>
+        /// <returns></returns>
+        private Image CreateCardImage(Card card, double offset, string path = "")
+        {
+            Image image = new Image();
+
+            if (path == "")
+            {
+                image.Source = new BitmapImage(new Uri($"Resources/cards/{card.Color}s-{card.Value}.png", UriKind.Relative));
+            }
+            else
+            {
+                image.Source = new BitmapImage(new Uri(path, UriKind.Relative));
+            }
+
+            image.Width = 195;
+            image.Height = 220;
+
+            var storyboard = new Storyboard();
+            var rotateAnimation = new DoubleAnimation();
+            rotateAnimation.From = 0;
+            rotateAnimation.To = 358 + (offset / 35);
+            rotateAnimation.Duration = new Duration(TimeSpan.FromSeconds(0.7));
+            var rotateTransform = new RotateTransform();
+            image.RenderTransform = rotateTransform;
+            rotateTransform.CenterX = image.Width / 2;
+            rotateTransform.CenterY = image.Height / 2;
+            storyboard.Children.Add(rotateAnimation);
+            Storyboard.SetTarget(rotateAnimation, image);
+            Storyboard.SetTargetProperty(rotateAnimation, new PropertyPath("(UIElement.RenderTransform).(RotateTransform.Angle)"));
+            storyboard.Begin();
+
+            Grid.SetColumn(image, (int)(offset / 40));
+            return image;
+        }
+        #endregion
+    }
+}

@@ -1,0 +1,71 @@
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+using NUnit.Framework;
+using BlackJack2022_3AHITN.Lib;
+
+namespace BlackJack2022_3AHITN.Lib.UnitTests
+{
+    /// <summary>
+    /// Alle testbaren Eigenschaften/Methoden der Klasse Game werden getestet und überprüft
+    /// </summary>
+    public class GameTests
+    {
+        [SetUp]
+        public void Setup()
+        {
+        }
+
+        [Test]
+        public void Test1()
+        {
+            Assert.Pass();
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob der Spieler nach dem Start des Spiels die richtige Anzahl der Karten bekommt
+        /// </summary>
+        [Test]
+        public void StartGame_CountOfCardsOfPlayer_ReturnTrueAmountOfCards()
+        {
+            //Arrange
+            PlayerFactory playerFactory = new PlayerFactory();
+            GameFactory gameFactory = new GameFactory();
+            Table table = new Table("Tisch2198", 100);
+            PlayerStrategySoftHands playerStrategy = new PlayerStrategySoftHands();
+            IPlayer player = playerFactory.CreatePlayer("Emin", table, playerStrategy);
+            IGame game = gameFactory.CreateGame(table, player);
+            game.StartGame();
+            int expected = 2;
+
+            //Act
+            int actual = game.Player.Cards.Count();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es wird getestet, ob der Dealer nach dem Start des Spiels die richtige Anzahl der Karten bekommt
+        /// </summary>
+        [Test]
+        public void StartGame_CountOfCardsOfDealer_ReturnTrueAmountOfCards()
+        {
+            //Arrange
+            PlayerFactory playerFactory = new PlayerFactory();
+            GameFactory gameFactory = new GameFactory();
+            Table table = new Table("Tisch2198", 100);
+            PlayerStrategySoftHands playerStrategy = new PlayerStrategySoftHands();
+            IPlayer player = playerFactory.CreatePlayer("Ramin", table, playerStrategy);
+            IGame game = gameFactory.CreateGame(table, player);
+            game.StartGame();
+            int expected = 2;
+
+            //Act
+            int actual = game.Dealer.Cards.Count();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+    }
+}

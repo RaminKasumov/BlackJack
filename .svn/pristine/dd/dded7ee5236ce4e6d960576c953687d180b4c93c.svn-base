@@ -1,0 +1,239 @@
+﻿
+namespace BlackJack2022_3AHITN.GUI
+{
+    partial class HandForm
+    {
+        /// <summary>
+        /// Erforderliche Designervariable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Verwendete Ressourcen bereinigen.
+        /// </summary>
+        /// <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Vom Windows Form-Designer generierter Code
+
+        /// <summary>
+        /// Erforderliche Methode für die Designerunterstützung.
+        /// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblNameOfPlayer = new System.Windows.Forms.Label();
+            this.flpPlayerCards = new System.Windows.Forms.FlowLayoutPanel();
+            this.nudSumOfCardValues = new System.Windows.Forms.NumericUpDown();
+            this.lblPlayerName = new System.Windows.Forms.Label();
+            this.btnClearHand = new System.Windows.Forms.Button();
+            this.lblStatusOfCards = new System.Windows.Forms.Label();
+            this.lblSumOfCardValues = new System.Windows.Forms.Label();
+            this.lblCards = new System.Windows.Forms.Label();
+            this.btnAddCard = new System.Windows.Forms.Button();
+            this.lblPlayerHand = new System.Windows.Forms.Label();
+            this.pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSumOfCardValues)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlMain.BackgroundImage = global::BlackJack2022_3AHITN.GUI.Properties.Resources.Hand;
+            this.pnlMain.Controls.Add(this.lblStatus);
+            this.pnlMain.Controls.Add(this.lblNameOfPlayer);
+            this.pnlMain.Controls.Add(this.flpPlayerCards);
+            this.pnlMain.Controls.Add(this.nudSumOfCardValues);
+            this.pnlMain.Controls.Add(this.lblPlayerName);
+            this.pnlMain.Controls.Add(this.btnClearHand);
+            this.pnlMain.Controls.Add(this.lblStatusOfCards);
+            this.pnlMain.Controls.Add(this.lblSumOfCardValues);
+            this.pnlMain.Controls.Add(this.lblCards);
+            this.pnlMain.Controls.Add(this.btnAddCard);
+            this.pnlMain.Controls.Add(this.lblPlayerHand);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1071, 557);
+            this.pnlMain.TabIndex = 0;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.Yellow;
+            this.lblStatus.Location = new System.Drawing.Point(862, 389);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(120, 33);
+            this.lblStatus.TabIndex = 16;
+            this.lblStatus.Text = "Normal";
+            // 
+            // lblNameOfPlayer
+            // 
+            this.lblNameOfPlayer.AutoSize = true;
+            this.lblNameOfPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.lblNameOfPlayer.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameOfPlayer.ForeColor = System.Drawing.Color.Yellow;
+            this.lblNameOfPlayer.Location = new System.Drawing.Point(899, 34);
+            this.lblNameOfPlayer.Name = "lblNameOfPlayer";
+            this.lblNameOfPlayer.Size = new System.Drawing.Size(114, 33);
+            this.lblNameOfPlayer.TabIndex = 15;
+            this.lblNameOfPlayer.Text = "Spieler";
+            // 
+            // flpPlayerCards
+            // 
+            this.flpPlayerCards.BackColor = System.Drawing.Color.Transparent;
+            this.flpPlayerCards.Location = new System.Drawing.Point(50, 141);
+            this.flpPlayerCards.Name = "flpPlayerCards";
+            this.flpPlayerCards.Size = new System.Drawing.Size(528, 310);
+            this.flpPlayerCards.TabIndex = 14;
+            // 
+            // nudSumOfCardValues
+            // 
+            this.nudSumOfCardValues.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudSumOfCardValues.Location = new System.Drawing.Point(881, 327);
+            this.nudSumOfCardValues.Name = "nudSumOfCardValues";
+            this.nudSumOfCardValues.ReadOnly = true;
+            this.nudSumOfCardValues.Size = new System.Drawing.Size(95, 32);
+            this.nudSumOfCardValues.TabIndex = 13;
+            this.nudSumOfCardValues.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblPlayerName
+            // 
+            this.lblPlayerName.AutoSize = true;
+            this.lblPlayerName.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerName.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerName.ForeColor = System.Drawing.Color.Cyan;
+            this.lblPlayerName.Location = new System.Drawing.Point(787, 34);
+            this.lblPlayerName.Name = "lblPlayerName";
+            this.lblPlayerName.Size = new System.Drawing.Size(106, 33);
+            this.lblPlayerName.TabIndex = 11;
+            this.lblPlayerName.Text = "Name:";
+            // 
+            // btnClearHand
+            // 
+            this.btnClearHand.BackColor = System.Drawing.Color.Yellow;
+            this.btnClearHand.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnClearHand.FlatAppearance.BorderSize = 5;
+            this.btnClearHand.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumOrchid;
+            this.btnClearHand.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnClearHand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearHand.Font = new System.Drawing.Font("Century", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearHand.ForeColor = System.Drawing.Color.Purple;
+            this.btnClearHand.Location = new System.Drawing.Point(606, 204);
+            this.btnClearHand.Name = "btnClearHand";
+            this.btnClearHand.Size = new System.Drawing.Size(257, 45);
+            this.btnClearHand.TabIndex = 10;
+            this.btnClearHand.Text = "Alle Karten löschen";
+            this.btnClearHand.UseVisualStyleBackColor = false;
+            this.btnClearHand.Click += new System.EventHandler(this.btnClearHand_Click);
+            // 
+            // lblStatusOfCards
+            // 
+            this.lblStatusOfCards.AutoSize = true;
+            this.lblStatusOfCards.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatusOfCards.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatusOfCards.ForeColor = System.Drawing.Color.Cyan;
+            this.lblStatusOfCards.Location = new System.Drawing.Point(601, 393);
+            this.lblStatusOfCards.Name = "lblStatusOfCards";
+            this.lblStatusOfCards.Size = new System.Drawing.Size(239, 28);
+            this.lblStatusOfCards.TabIndex = 9;
+            this.lblStatusOfCards.Text = "Status der Karten:";
+            // 
+            // lblSumOfCardValues
+            // 
+            this.lblSumOfCardValues.AutoSize = true;
+            this.lblSumOfCardValues.BackColor = System.Drawing.Color.Transparent;
+            this.lblSumOfCardValues.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSumOfCardValues.ForeColor = System.Drawing.Color.Cyan;
+            this.lblSumOfCardValues.Location = new System.Drawing.Point(601, 327);
+            this.lblSumOfCardValues.Name = "lblSumOfCardValues";
+            this.lblSumOfCardValues.Size = new System.Drawing.Size(250, 28);
+            this.lblSumOfCardValues.TabIndex = 8;
+            this.lblSumOfCardValues.Text = "Summe der Karten:";
+            // 
+            // lblCards
+            // 
+            this.lblCards.AutoSize = true;
+            this.lblCards.BackColor = System.Drawing.Color.Transparent;
+            this.lblCards.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCards.ForeColor = System.Drawing.Color.PaleGreen;
+            this.lblCards.Location = new System.Drawing.Point(45, 93);
+            this.lblCards.Name = "lblCards";
+            this.lblCards.Size = new System.Drawing.Size(260, 35);
+            this.lblCards.TabIndex = 5;
+            this.lblCards.Text = "Liste der Karten";
+            // 
+            // btnAddCard
+            // 
+            this.btnAddCard.BackColor = System.Drawing.Color.Yellow;
+            this.btnAddCard.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnAddCard.FlatAppearance.BorderSize = 5;
+            this.btnAddCard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumOrchid;
+            this.btnAddCard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnAddCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCard.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCard.ForeColor = System.Drawing.Color.Purple;
+            this.btnAddCard.Location = new System.Drawing.Point(606, 141);
+            this.btnAddCard.Name = "btnAddCard";
+            this.btnAddCard.Size = new System.Drawing.Size(257, 48);
+            this.btnAddCard.TabIndex = 3;
+            this.btnAddCard.Text = "Karte hinzufügen\r\n";
+            this.btnAddCard.UseVisualStyleBackColor = false;
+            this.btnAddCard.Click += new System.EventHandler(this.btnAddCard_Click);
+            // 
+            // lblPlayerHand
+            // 
+            this.lblPlayerHand.AutoSize = true;
+            this.lblPlayerHand.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerHand.Font = new System.Drawing.Font("Century", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerHand.ForeColor = System.Drawing.Color.GreenYellow;
+            this.lblPlayerHand.Location = new System.Drawing.Point(495, 20);
+            this.lblPlayerHand.Name = "lblPlayerHand";
+            this.lblPlayerHand.Size = new System.Drawing.Size(137, 50);
+            this.lblPlayerHand.TabIndex = 0;
+            this.lblPlayerHand.Text = "Hand";
+            // 
+            // HandForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1071, 557);
+            this.Controls.Add(this.pnlMain);
+            this.Name = "HandForm";
+            this.Text = "Hand des Spielers";
+            this.pnlMain.ResumeLayout(false);
+            this.pnlMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSumOfCardValues)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Label lblPlayerHand;
+        private System.Windows.Forms.Label lblCards;
+        private System.Windows.Forms.Button btnAddCard;
+        private System.Windows.Forms.Label lblStatusOfCards;
+        private System.Windows.Forms.Label lblSumOfCardValues;
+        private System.Windows.Forms.Button btnClearHand;
+        private System.Windows.Forms.Label lblPlayerName;
+        private System.Windows.Forms.NumericUpDown nudSumOfCardValues;
+        private System.Windows.Forms.FlowLayoutPanel flpPlayerCards;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblNameOfPlayer;
+    }
+}
+

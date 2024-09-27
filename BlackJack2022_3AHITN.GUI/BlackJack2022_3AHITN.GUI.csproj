@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0-windows8.0</TargetFramework>
+        <LangVersion>12</LangVersion>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <SupportedOSPlatformVersion>8.0</SupportedOSPlatformVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BlackJack2022_3AHITN.Lib\BlackJack2022_3AHITN.Lib.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="NAudio" Version="2.1.0" />
+    </ItemGroup>
+
+</Project>

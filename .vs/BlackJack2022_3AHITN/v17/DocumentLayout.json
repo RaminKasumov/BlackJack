@@ -1,0 +1,702 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0CC5DD47-EF30-41F1-A8F5-45AA12536033}|BlackJack2022_3AHITN.WPF\\BlackJack2022_3AHITN.WPF.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.wpf\\blackjackgame.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0CC5DD47-EF30-41F1-A8F5-45AA12536033}|BlackJack2022_3AHITN.WPF\\BlackJack2022_3AHITN.WPF.csproj|solutionrelative:blackjack2022_3ahitn.wpf\\blackjackgame.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E89B967-B901-4E8D-9DEC-96D2B2414975}|BlackJack2022_3AHITN.GUI\\BlackJack2022_3AHITN.GUI.csproj|C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\blackjack2022_3ahitn.gui\\handform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2E89B967-B901-4E8D-9DEC-96D2B2414975}|BlackJack2022_3AHITN.GUI\\BlackJack2022_3AHITN.GUI.csproj|solutionrelative:blackjack2022_3ahitn.gui\\handform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E89B967-B901-4E8D-9DEC-96D2B2414975}|BlackJack2022_3AHITN.GUI\\BlackJack2022_3AHITN.GUI.csproj|C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\blackjack2022_3ahitn.gui\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2E89B967-B901-4E8D-9DEC-96D2B2414975}|BlackJack2022_3AHITN.GUI\\BlackJack2022_3AHITN.GUI.csproj|solutionrelative:blackjack2022_3ahitn.gui\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E89B967-B901-4E8D-9DEC-96D2B2414975}|BlackJack2022_3AHITN.GUI\\BlackJack2022_3AHITN.GUI.csproj|C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\blackjack2022_3ahitn.gui\\addcardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2E89B967-B901-4E8D-9DEC-96D2B2414975}|BlackJack2022_3AHITN.GUI\\BlackJack2022_3AHITN.GUI.csproj|solutionrelative:blackjack2022_3ahitn.gui\\addcardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E89B967-B901-4E8D-9DEC-96D2B2414975}|BlackJack2022_3AHITN.GUI\\BlackJack2022_3AHITN.GUI.csproj|C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\blackjack2022_3ahitn.gui\\blackjackform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2E89B967-B901-4E8D-9DEC-96D2B2414975}|BlackJack2022_3AHITN.GUI\\BlackJack2022_3AHITN.GUI.csproj|solutionrelative:blackjack2022_3ahitn.gui\\blackjackform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CC5DD47-EF30-41F1-A8F5-45AA12536033}|BlackJack2022_3AHITN.WPF\\BlackJack2022_3AHITN.WPF.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.wpf\\gamedesigner.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0CC5DD47-EF30-41F1-A8F5-45AA12536033}|BlackJack2022_3AHITN.WPF\\BlackJack2022_3AHITN.WPF.csproj|solutionrelative:blackjack2022_3ahitn.wpf\\gamedesigner.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E89B967-B901-4E8D-9DEC-96D2B2414975}|BlackJack2022_3AHITN.GUI\\BlackJack2022_3AHITN.GUI.csproj|C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\blackjack2022_3ahitn.gui\\tableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2E89B967-B901-4E8D-9DEC-96D2B2414975}|BlackJack2022_3AHITN.GUI\\BlackJack2022_3AHITN.GUI.csproj|solutionrelative:blackjack2022_3ahitn.gui\\tableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\abstractplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\abstractplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\cardcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\cardcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\carddeck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\carddeck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\cardstack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\cardstack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\cardvalue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\cardvalue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\dealer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\dealer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\dealerstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\dealerstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\gameconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\gameconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\gamefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\gamefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\gamewinner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\gamewinner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\hand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\hand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\handstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\handstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\icardsource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\icardsource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\igame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\igame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\igameconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\igameconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\iplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\iplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\iplayerstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\iplayerstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\playeraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\playeraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\playereventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\playereventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\playerfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\playerfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\playerstrategyhardhands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\playerstrategyhardhands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\playerstrategysofthands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\playerstrategysofthands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\sevencardsource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\sevencardsource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B64857-DA02-47C4-B868-9EF66F75431A}|BlackJack2022_3AHITN.Lib\\BlackJack2022_3AHITN.Lib.csproj|solutionrelative:blackjack2022_3ahitn.lib\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib.unittests\\carddecktests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|solutionrelative:blackjack2022_3ahitn.lib.unittests\\carddecktests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib.unittests\\cardstacktests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|solutionrelative:blackjack2022_3ahitn.lib.unittests\\cardstacktests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib.unittests\\cardtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|solutionrelative:blackjack2022_3ahitn.lib.unittests\\cardtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib.unittests\\dealertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|solutionrelative:blackjack2022_3ahitn.lib.unittests\\dealertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib.unittests\\gametests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|solutionrelative:blackjack2022_3ahitn.lib.unittests\\gametests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib.unittests\\handtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|solutionrelative:blackjack2022_3ahitn.lib.unittests\\handtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib.unittests\\playertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|solutionrelative:blackjack2022_3ahitn.lib.unittests\\playertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|c:\\users\\user\\source\\repos\\3ahitn\\blackjack2022_3ahitn\\blackjack2022_3ahitn.lib.unittests\\tabletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DFD0BA7-EB89-4A49-8EAA-8AC6B1832BAF}|BlackJack2022_3AHITN.Lib.UnitTests\\BlackJack2022_3AHITN.Lib.UnitTests.csproj|solutionrelative:blackjack2022_3ahitn.lib.unittests\\tabletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BlackJackGame.xaml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.WPF\\BlackJackGame.xaml",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.WPF\\BlackJackGame.xaml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.WPF\\BlackJackGame.xaml",
+              "RelativeToolTip": "BlackJack2022_3AHITN.WPF\\BlackJackGame.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-11T17:52:38.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameDesigner.xaml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.WPF\\GameDesigner.xaml",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.WPF\\GameDesigner.xaml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.WPF\\GameDesigner.xaml",
+              "RelativeToolTip": "BlackJack2022_3AHITN.WPF\\GameDesigner.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-11T17:51:41.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BlackJackForm.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.GUI\\BlackJackForm.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.GUI\\BlackJackForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.GUI\\BlackJackForm.cs [Entwurf]",
+              "RelativeToolTip": "BlackJack2022_3AHITN.GUI\\BlackJackForm.cs [Entwurf]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:50:28.165Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameForm.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.GUI\\GameForm.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.GUI\\GameForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.GUI\\GameForm.cs [Entwurf]",
+              "RelativeToolTip": "BlackJack2022_3AHITN.GUI\\GameForm.cs [Entwurf]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:49:19.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HandForm.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.GUI\\HandForm.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.GUI\\HandForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.GUI\\HandForm.cs [Entwurf]",
+              "RelativeToolTip": "BlackJack2022_3AHITN.GUI\\HandForm.cs [Entwurf]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:46:56.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddCardForm.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.GUI\\AddCardForm.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.GUI\\AddCardForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.GUI\\AddCardForm.cs [Entwurf]",
+              "RelativeToolTip": "BlackJack2022_3AHITN.GUI\\AddCardForm.cs [Entwurf]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:50:46.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TableForm.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.GUI\\TableForm.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.GUI\\TableForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.GUI\\TableForm.cs [Entwurf]",
+              "RelativeToolTip": "BlackJack2022_3AHITN.GUI\\TableForm.cs [Entwurf]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:46:29.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AbstractPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\AbstractPlayer.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\AbstractPlayer.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\AbstractPlayer.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\AbstractPlayer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:46:18.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Card.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\Card.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\Card.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\Card.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\Card.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:46:11.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CardColor.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\CardColor.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\CardColor.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\CardColor.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\CardColor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:46:08.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CardDeck.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\CardDeck.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\CardDeck.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\CardDeck.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\CardDeck.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:46:02.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CardStack.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\CardStack.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\CardStack.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\CardStack.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\CardStack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:45:55.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CardValue.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\CardValue.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\CardValue.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\CardValue.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\CardValue.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:45:53.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Dealer.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\Dealer.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\Dealer.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\Dealer.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\Dealer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:45:47.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DealerStrategy.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\DealerStrategy.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\DealerStrategy.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\DealerStrategy.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\DealerStrategy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:45:43.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\Game.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\Game.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\Game.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\Game.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:45:36.192Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GameConfig.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\GameConfig.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\GameConfig.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\GameConfig.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\GameConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:45:33.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GameFactory.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\GameFactory.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\GameFactory.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\GameFactory.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\GameFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:45:28.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GameWinner.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\GameWinner.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\GameWinner.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\GameWinner.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\GameWinner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:45:25.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Hand.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\Hand.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\Hand.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\Hand.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\Hand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:45:16.143Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "HandStatus.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\HandStatus.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\HandStatus.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\HandStatus.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\HandStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:45:16.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ICardSource.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\ICardSource.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\ICardSource.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\ICardSource.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\ICardSource.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:45:11.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IGame.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\IGame.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\IGame.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\IGame.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\IGame.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:45:02.865Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IGameConfig.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\IGameConfig.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\IGameConfig.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\IGameConfig.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\IGameConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:44:58.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\IPlayer.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\IPlayer.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\IPlayer.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\IPlayer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:44:53.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IPlayerStrategy.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\IPlayerStrategy.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\IPlayerStrategy.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\IPlayerStrategy.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\IPlayerStrategy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:44:49.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\Player.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\Player.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\Player.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:44:43.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "PlayerAction.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\PlayerAction.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\PlayerAction.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\PlayerAction.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\PlayerAction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:44:41.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "PlayerEventArgs.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\PlayerEventArgs.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\PlayerEventArgs.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\PlayerEventArgs.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\PlayerEventArgs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:44:35.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "PlayerFactory.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\PlayerFactory.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\PlayerFactory.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\PlayerFactory.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\PlayerFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:44:30.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "PlayerStrategyHardHands.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\PlayerStrategyHardHands.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\PlayerStrategyHardHands.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\PlayerStrategyHardHands.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\PlayerStrategyHardHands.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:44:17.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "PlayerStrategySoftHands.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\PlayerStrategySoftHands.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\PlayerStrategySoftHands.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\PlayerStrategySoftHands.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\PlayerStrategySoftHands.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:44:13.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Settings.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\Settings.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\Settings.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\Settings.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\Settings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:44:08.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "SevenCardSource.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\SevenCardSource.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\SevenCardSource.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\SevenCardSource.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\SevenCardSource.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:44:03.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Table.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\Table.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib\\Table.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib\\Table.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib\\Table.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:43:57.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "CardDeckTests.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\CardDeckTests.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib.UnitTests\\CardDeckTests.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\CardDeckTests.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib.UnitTests\\CardDeckTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:43:53.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "CardStackTests.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\CardStackTests.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib.UnitTests\\CardStackTests.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\CardStackTests.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib.UnitTests\\CardStackTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:43:50.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "CardTests.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\CardTests.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib.UnitTests\\CardTests.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\CardTests.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib.UnitTests\\CardTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:43:47.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "DealerTests.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\DealerTests.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib.UnitTests\\DealerTests.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\DealerTests.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib.UnitTests\\DealerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:43:44.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "GameTests.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\GameTests.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib.UnitTests\\GameTests.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\GameTests.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib.UnitTests\\GameTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:43:41.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "HandTests.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\HandTests.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib.UnitTests\\HandTests.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\HandTests.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib.UnitTests\\HandTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:43:38.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "PlayerTests.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\PlayerTests.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib.UnitTests\\PlayerTests.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\PlayerTests.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib.UnitTests\\PlayerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:43:35.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "TableTests.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\TableTests.cs",
+              "RelativeDocumentMoniker": "BlackJack2022_3AHITN.Lib.UnitTests\\TableTests.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\3AHITN\\BlackJack2022_3AHITN\\BlackJack2022_3AHITN.Lib.UnitTests\\TableTests.cs",
+              "RelativeToolTip": "BlackJack2022_3AHITN.Lib.UnitTests\\TableTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T17:43:29.449Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

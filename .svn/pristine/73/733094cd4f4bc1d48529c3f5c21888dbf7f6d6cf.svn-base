@@ -1,0 +1,169 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <SupportedOSPlatformVersion>8.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\cards\Card-Skin-Red.png" />
+    <None Remove="Resources\cards\Clubs-Ace.png" />
+    <None Remove="Resources\cards\Clubs-Eight.png" />
+    <None Remove="Resources\cards\Clubs-Five.png" />
+    <None Remove="Resources\cards\Clubs-Four.png" />
+    <None Remove="Resources\cards\Clubs-Jack.png" />
+    <None Remove="Resources\cards\Clubs-King.png" />
+    <None Remove="Resources\cards\Clubs-Nine.png" />
+    <None Remove="Resources\cards\Clubs-Queen.png" />
+    <None Remove="Resources\cards\Clubs-Seven.png" />
+    <None Remove="Resources\cards\Clubs-Six.png" />
+    <None Remove="Resources\cards\Clubs-Ten.png" />
+    <None Remove="Resources\cards\Clubs-Three.png" />
+    <None Remove="Resources\cards\Clubs-Two.png" />
+    <None Remove="Resources\cards\Diamonds-Ace.png" />
+    <None Remove="Resources\cards\Diamonds-Eight.png" />
+    <None Remove="Resources\cards\Diamonds-Five.png" />
+    <None Remove="Resources\cards\Diamonds-Four.png" />
+    <None Remove="Resources\cards\Diamonds-Jack.png" />
+    <None Remove="Resources\cards\Diamonds-King.png" />
+    <None Remove="Resources\cards\Diamonds-Nine.png" />
+    <None Remove="Resources\cards\Diamonds-Queen.png" />
+    <None Remove="Resources\cards\Diamonds-Seven.png" />
+    <None Remove="Resources\cards\Diamonds-Six.png" />
+    <None Remove="Resources\cards\Diamonds-Ten.png" />
+    <None Remove="Resources\cards\Diamonds-Three.png" />
+    <None Remove="Resources\cards\Diamonds-Two.png" />
+    <None Remove="Resources\cards\Hearts-Ace.png" />
+    <None Remove="Resources\cards\Hearts-Eight.png" />
+    <None Remove="Resources\cards\Hearts-Five.png" />
+    <None Remove="Resources\cards\Hearts-Four.png" />
+    <None Remove="Resources\cards\Hearts-Jack.png" />
+    <None Remove="Resources\cards\Hearts-King.png" />
+    <None Remove="Resources\cards\Hearts-Nine.png" />
+    <None Remove="Resources\cards\Hearts-Queen.png" />
+    <None Remove="Resources\cards\Hearts-Seven.png" />
+    <None Remove="Resources\cards\Hearts-Six.png" />
+    <None Remove="Resources\cards\Hearts-Ten.png" />
+    <None Remove="Resources\cards\Hearts-Three.png" />
+    <None Remove="Resources\cards\Hearts-Two.png" />
+    <None Remove="Resources\cards\Spades-Ace.png" />
+    <None Remove="Resources\cards\Spades-Eight.png" />
+    <None Remove="Resources\cards\Spades-Five.png" />
+    <None Remove="Resources\cards\Spades-Four.png" />
+    <None Remove="Resources\cards\Spades-Jack.png" />
+    <None Remove="Resources\cards\Spades-King.png" />
+    <None Remove="Resources\cards\Spades-Nine.png" />
+    <None Remove="Resources\cards\Spades-Queen.png" />
+    <None Remove="Resources\cards\Spades-Seven.png" />
+    <None Remove="Resources\cards\Spades-Six.png" />
+    <None Remove="Resources\cards\Spades-Ten.png" />
+    <None Remove="Resources\cards\Spades-Three.png" />
+    <None Remove="Resources\cards\Spades-Two.png" />
+    <None Remove="Resources\coins\coin-10.png" />
+    <None Remove="Resources\coins\coin-100.png" />
+    <None Remove="Resources\coins\coin-20.png" />
+    <None Remove="Resources\coins\coin-200.png" />
+    <None Remove="Resources\coins\coin-50.png" />
+    <None Remove="Resources\coins\coin-500.png" />
+    <None Remove="Resources\coins\coin-status-added.png" />
+    <None Remove="Resources\icon\casino01.ico" />
+    <None Remove="Resources\other\action-divide.png" />
+    <None Remove="Resources\other\action-double.png" />
+    <None Remove="Resources\other\action-hit.png" />
+    <None Remove="Resources\other\action-stand.png" />
+    <None Remove="Resources\other\BlackJack.jpg" />
+    <None Remove="Resources\other\dealer.png" />
+    <None Remove="Resources\other\Hand.jpg" />
+    <None Remove="Resources\other\Presentation.jpg" />
+    <None Remove="Resources\other\rating-busted.png" />
+    <None Remove="Resources\other\status-blackJack.jpg" />
+    <None Remove="Resources\other\Tisch.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlackJack2022_3AHITN.Lib\BlackJack2022_3AHITN.Lib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\cards\Card-Skin-Red.png" />
+    <Resource Include="Resources\cards\Clubs-Ace.png" />
+    <Resource Include="Resources\cards\Clubs-Eight.png" />
+    <Resource Include="Resources\cards\Clubs-Five.png" />
+    <Resource Include="Resources\cards\Clubs-Four.png" />
+    <Resource Include="Resources\cards\Clubs-Jack.png" />
+    <Resource Include="Resources\cards\Clubs-King.png" />
+    <Resource Include="Resources\cards\Clubs-Nine.png" />
+    <Resource Include="Resources\cards\Clubs-Queen.png" />
+    <Resource Include="Resources\cards\Clubs-Seven.png" />
+    <Resource Include="Resources\cards\Clubs-Six.png" />
+    <Resource Include="Resources\cards\Clubs-Ten.png" />
+    <Resource Include="Resources\cards\Clubs-Three.png" />
+    <Resource Include="Resources\cards\Clubs-Two.png" />
+    <Resource Include="Resources\cards\Diamonds-Ace.png" />
+    <Resource Include="Resources\cards\Diamonds-Eight.png" />
+    <Resource Include="Resources\cards\Diamonds-Five.png" />
+    <Resource Include="Resources\cards\Diamonds-Four.png" />
+    <Resource Include="Resources\cards\Diamonds-Jack.png" />
+    <Resource Include="Resources\cards\Diamonds-King.png" />
+    <Resource Include="Resources\cards\Diamonds-Nine.png" />
+    <Resource Include="Resources\cards\Diamonds-Queen.png" />
+    <Resource Include="Resources\cards\Diamonds-Seven.png" />
+    <Resource Include="Resources\cards\Diamonds-Six.png" />
+    <Resource Include="Resources\cards\Diamonds-Ten.png" />
+    <Resource Include="Resources\cards\Diamonds-Three.png" />
+    <Resource Include="Resources\cards\Diamonds-Two.png" />
+    <Resource Include="Resources\cards\Hearts-Ace.png" />
+    <Resource Include="Resources\cards\Hearts-Eight.png" />
+    <Resource Include="Resources\cards\Hearts-Five.png" />
+    <Resource Include="Resources\cards\Hearts-Four.png" />
+    <Resource Include="Resources\cards\Hearts-Jack.png" />
+    <Resource Include="Resources\cards\Hearts-King.png" />
+    <Resource Include="Resources\cards\Hearts-Nine.png" />
+    <Resource Include="Resources\cards\Hearts-Queen.png" />
+    <Resource Include="Resources\cards\Hearts-Seven.png" />
+    <Resource Include="Resources\cards\Hearts-Six.png" />
+    <Resource Include="Resources\cards\Hearts-Ten.png" />
+    <Resource Include="Resources\cards\Hearts-Three.png" />
+    <Resource Include="Resources\cards\Hearts-Two.png" />
+    <Resource Include="Resources\cards\Spades-Ace.png" />
+    <Resource Include="Resources\cards\Spades-Eight.png" />
+    <Resource Include="Resources\cards\Spades-Five.png" />
+    <Resource Include="Resources\cards\Spades-Four.png" />
+    <Resource Include="Resources\cards\Spades-Jack.png" />
+    <Resource Include="Resources\cards\Spades-King.png" />
+    <Resource Include="Resources\cards\Spades-Nine.png" />
+    <Resource Include="Resources\cards\Spades-Queen.png" />
+    <Resource Include="Resources\cards\Spades-Seven.png" />
+    <Resource Include="Resources\cards\Spades-Six.png" />
+    <Resource Include="Resources\cards\Spades-Ten.png" />
+    <Resource Include="Resources\cards\Spades-Three.png" />
+    <Resource Include="Resources\cards\Spades-Two.png" />
+    <Resource Include="Resources\coins\coin-10.png" />
+    <Resource Include="Resources\coins\coin-100.png" />
+    <Resource Include="Resources\coins\coin-20.png" />
+    <Resource Include="Resources\coins\coin-200.png" />
+    <Resource Include="Resources\coins\coin-50.png" />
+    <Resource Include="Resources\coins\coin-500.png" />
+    <Resource Include="Resources\coins\coin-status-added.png" />
+    <Resource Include="Resources\icon\casino01.ico" />
+    <Resource Include="Resources\other\action-divide.png" />
+    <Resource Include="Resources\other\action-double.png" />
+    <Resource Include="Resources\other\action-hit.png" />
+    <Resource Include="Resources\other\action-stand.png" />
+    <Resource Include="Resources\other\BlackJack.jpg" />
+    <Resource Include="Resources\other\dealer.png" />
+    <Resource Include="Resources\other\Hand.jpg" />
+    <Resource Include="Resources\other\Presentation.jpg" />
+    <Resource Include="Resources\other\rating-busted.png" />
+    <Resource Include="Resources\other\status-blackJack.jpg" />
+    <Resource Include="Resources\other\Tisch.jpg" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,73 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Resources;
+using System.Reflection;
+using BlackJack2022_3AHITN.Lib;
+
+namespace BlackJack2022_3AHITN.GUI
+{
+    public partial class TableForm : Form
+    {
+        #region instancevariables
+        BlackJackForm _blackJackForm;
+        ResourceManager _resourceManager;
+        Table _table;
+        #endregion
+
+        #region constructors
+        public TableForm()
+        {
+            InitializeComponent();
+        }
+
+        public TableForm(BlackJackForm blackJackForm)
+        {
+            _blackJackForm = blackJackForm;
+            InitializeComponent();
+            InitializeData();
+        }
+        #endregion
+
+        #region methods
+        private void InitializeData()
+        {
+            //Instanzvariable für den Tisch wird initialisiert
+            _table = new Table("Tisch2198");
+
+            //Alle textboxen werden mit nötigen Informationen befüllt und Wetteneinsatz vom Spieler wird auch gespeichert
+            lblNameOfTable.Text = _table.Name;
+            lblBetinEuro.Text = _blackJackForm.PlayerBet + " €";
+            lblNameOfDealer.Text = _table.Dealer.GetName();
+
+            //ResourceManager wird mit Bildern von allen Karten befüllt
+            _resourceManager = new ResourceManager("BlackJack2022_3AHITN.GUI.Properties.Resources", Assembly.GetExecutingAssembly());
+        }
+
+        private void btnDrawCard_Click(object sender, EventArgs e)
+        {
+            flpDrawCard.Controls.Clear();
+
+            //Das Bild der gezogenen Karte vom Spieler wird angezeigt
+            PictureBox pbxCard = new PictureBox();
+            pbxCard.Image = (Bitmap)_resourceManager.GetObject(_table.DrawCard().Color + "s_" + _table.DrawCard().Value);
+            pbxCard.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxCard.Size = new Size(90, 120);
+            flpDrawCard.Controls.Add(pbxCard);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            //Seite für den Tisch wird geschlossen und die Startseite wird angezeigt
+            this.Hide();
+            _blackJackForm.Show();
+        }
+        #endregion
+    }
+}

@@ -1,0 +1,11 @@
+C:\Users\User\source\repos\3AHITN\BlackJack2022_3AHITN\BlackJack2022_3AHITN.Lib\bin\Debug\net8.0\BlackJack2022_3AHITN.Lib.deps.json
+C:\Users\User\source\repos\3AHITN\BlackJack2022_3AHITN\BlackJack2022_3AHITN.Lib\bin\Debug\net8.0\BlackJack2022_3AHITN.Lib.dll
+C:\Users\User\source\repos\3AHITN\BlackJack2022_3AHITN\BlackJack2022_3AHITN.Lib\bin\Debug\net8.0\BlackJack2022_3AHITN.Lib.pdb
+C:\Users\User\source\repos\3AHITN\BlackJack2022_3AHITN\BlackJack2022_3AHITN.Lib\obj\Debug\net8.0\BlackJack2022_3AHITN.Lib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\3AHITN\BlackJack2022_3AHITN\BlackJack2022_3AHITN.Lib\obj\Debug\net8.0\BlackJack2022_3AHITN.Lib.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\3AHITN\BlackJack2022_3AHITN\BlackJack2022_3AHITN.Lib\obj\Debug\net8.0\BlackJack2022_3AHITN.Lib.AssemblyInfo.cs
+C:\Users\User\source\repos\3AHITN\BlackJack2022_3AHITN\BlackJack2022_3AHITN.Lib\obj\Debug\net8.0\BlackJack2022_3AHITN.Lib.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\3AHITN\BlackJack2022_3AHITN\BlackJack2022_3AHITN.Lib\obj\Debug\net8.0\BlackJack2022_3AHITN.Lib.dll
+C:\Users\User\source\repos\3AHITN\BlackJack2022_3AHITN\BlackJack2022_3AHITN.Lib\obj\Debug\net8.0\refint\BlackJack2022_3AHITN.Lib.dll
+C:\Users\User\source\repos\3AHITN\BlackJack2022_3AHITN\BlackJack2022_3AHITN.Lib\obj\Debug\net8.0\BlackJack2022_3AHITN.Lib.pdb
+C:\Users\User\source\repos\3AHITN\BlackJack2022_3AHITN\BlackJack2022_3AHITN.Lib\obj\Debug\net8.0\ref\BlackJack2022_3AHITN.Lib.dll
