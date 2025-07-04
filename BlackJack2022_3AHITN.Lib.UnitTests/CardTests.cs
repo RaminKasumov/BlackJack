@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 namespace BlackJack2022_3AHITN.Lib.UnitTests
 {
     /// <summary>
-    /// Alle testbaren Eigenschaften/Methoden der Klasse Card werden getestet und überprüft
+    /// Alle testbaren Eigenschaften/Methoden der Klasse Card werden getestet und Ã¼berprÃ¼ft
     /// </summary>
     public class CardTests
     {
